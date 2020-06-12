@@ -8,10 +8,16 @@
 \RequirePackage{fontspec} %--------------------- alternative fonts
 \RequirePackage{graphicx} %--------------------- pictures and figures
 \RequirePackage{booktabs} %--------------------- nice tables
+\RequirePackage{caption} %---------------------- better captions
 \RequirePackage[usenames,dvipsnames]{xcolor} %-- colours
 \RequirePackage{fancyhdr} %--------------------- fancy layout
 \RequirePackage[nottoc]{tocbibind} %------------ put bibliography in TOC
 \RequirePackage{titlesec} %--------------------- customise section and part
+\RequirePackage[backend=biber,
+                sorting=none,
+                style=ieee,
+                maxnames=3]{biblatex} %--------- bibliography backend
+\RequirePackage[sort,english]{cleveref} %---- nicer citations and references
 \RequirePackage{bookmark} %--------------------- hyperref and links
 
 %---- pass options to class
@@ -31,11 +37,10 @@
             [display]
             {\centering\normalfont\Huge\scshape}
             {\vfill
-             \titlerule[5pt]\vspace{3pt}
-             \titlerule[2pt]\vspace{3pt}
              \partname~\thepart}
             {0pt}
-            {\titlerule[2pt]\vspace{3pt}\Huge
+            {\vspace{3pt}
+             \Huge
             }
 
 %---- space
