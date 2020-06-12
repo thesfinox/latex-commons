@@ -18,7 +18,6 @@
                 style=ieee,
                 maxnames=3]{biblatex} %--------- bibliography backend
 \RequirePackage{bookmark} %--------------------- hyperref and links
-\RequirePackage[sort,english]{cleveref} %------- nicer citations and references
 
 %---- pass options to class
 
