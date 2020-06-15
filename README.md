@@ -12,14 +12,14 @@ This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 Inter
 
 ### Classes
 
-* \`\`[`fullarticle.cls`](classes/fullarticle.md): class to write research papers with bibliography support \([**biblatex**](https://www.ctan.org/pkg/biblatex)\), modern tables with [**booktabs**](https://www.ctan.org/pkg/booktabs), and fancy layout wih [**fancyhdr**](https://www.ctan.org/pkg/fancyhdr).
-* \`\`[`resume.cls`](classes/resume.md): environments and commands to write a one page resume typeset in two columns.
-* \`\`[`thesis.cls`](classes/thesis.md): environments and commands to write a Ph.D. thesis with simple title pages and sectioning.
+* [Full Article](classes/fullarticle.md): research papers with a nice typesetting.
+* [Resume](classes/resume.md): one page resume template typeset in two columns.
+* [Thesis](classes/thesis.md): Ph.D. thesis with simple title pages and sectioning.
 
 ### Packages
 
-* \`\`[`debug.sty`](packages/debug.md): debug symbols and comments for drafts.
-* \`\`[`sciencestuff.sty`](packages/sciencestuff.md)`sciencestuff.sty`: includes scientific packages to provide math symbols \([**amsmath**](https://www.ctan.org/pkg/amsmath), **amssymb**, [**amsfonts**](https://www.ctan.org/pkg/amsfonts)\), better numerical sets \(**dsfont**\), upright Greek letters \([**upgreek**](https://www.ctan.org/pkg/upgreek)\), physics-related shortcuts \([**physics**](https://www.ctan.org/pkg/physics) and [**siunitx**](https://www.ctan.org/pkg/siunitx)\) and better references \([**cleveref**](https://www.ctan.org/pkg/cleveref)\); provides additional shortcuts, documented in these pages.
+* [Debug](packages/debug.md): debug symbols and comments for drafts.
+* [Science Stuff](packages/sciencestuff.md): scientific shortcuts for papers and thesis.
 
 
 
