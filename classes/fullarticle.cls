@@ -9,6 +9,8 @@
 \RequirePackage{geometry} %--------------------- manipulate page geometry
 \RequirePackage{graphicx} %--------------------- pictures and figures
 \RequirePackage{booktabs} %--------------------- nice tables
+\RequirePackage{multicol} %--------------------- multi-column environment
+\RequirePackage{multirow} %--------------------- multi-row environment
 \RequirePackage{caption} %---------------------- better captions
 \RequirePackage[usenames,dvipsnames]{xcolor} %-- colours
 \RequirePackage{fancyhdr} %--------------------- fancy layout
