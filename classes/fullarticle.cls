@@ -38,6 +38,12 @@
 \renewcommand{\Authand}{~~and~}
 \renewcommand{\Authands}{~~and~}
 
+%---- numbering (number equations, figures and tables within section)
+
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+
 %---- metadata
 
 \makeatletter
