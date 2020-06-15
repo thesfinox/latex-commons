@@ -6,7 +6,7 @@ Welcome to **LaTeX Commons**!
 
 Documentation can be found at [this URL](https://thesfinox.gitbook.io/latex-templates-and-packages/).
 
-This is my collection of classes and packages I wrote to typeset TeX documents I commonly use. Feel free to use them as you like as long as you include a reference to this [GitHub repository](https://github.com/thesfinox/latex-commons)!
+This is my collection of classes and packages I wrote to typeset TeX documents I commonly use. Feel free to use them as you like \(I appreciate a reference to this [GitHub repository](https://github.com/thesfinox/latex-commons)\)!
 
 This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
 
