@@ -44,12 +44,6 @@
              \Huge
             }
 
-%---- numbering (number equations, figures and tables within section)
-
-\numberwithin{equation}{section}
-\numberwithin{figure}{section}
-\numberwithin{table}{section}
-
 %---- space
 
 \newlength{\blockskip}
