@@ -4,12 +4,12 @@
 
 ## Classes
 
-* [Full Article](classes/full-article.md)
+* [Full Article](classes/fullarticle.md)
 * [Resume](classes/resume.md)
 * [Thesis](classes/thesis.md)
 
 ## Packages
 
 * [Debug](packages/debug.md)
-* [Science Stuff](packages/science-stuff.md)
+* [Science Stuff](packages/sciencestuff.md)
 
