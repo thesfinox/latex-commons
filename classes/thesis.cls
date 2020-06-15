@@ -190,7 +190,7 @@
 
 %---- acknowledgements
 
-\newenvironment{acknowledgementspage}
+\newenvironment{acknowledgmentspage}
 {%
   \thispagestyle{plain}
 
