@@ -41,19 +41,7 @@
 
 %%%% COLOURS
 
-\definecolor{name}{gray}{0.40}
-\definecolor{surname}{gray}{0.00}
-\definecolor{shadecolor}{HTML}{fff2e6}
-\definecolor{sidebardesc}{gray}{0.30}
 \definecolor{links}{HTML}{006bb3}
-\definecolor{section}{gray}{0.30}
-\definecolor{bulletsection}{HTML}{cc0000}
-\definecolor{period}{HTML}{cc0000}
-\definecolor{position}{gray}{0.20}
-\definecolor{sector}{HTML}{cc0000}
-\definecolor{bulletsector}{gray}{0.95}
-\definecolor{sectortext}{gray}{0.30}
-\definecolor{sectortitle}{gray}{1.00}
 
 %%%%%%%% CHARACTERISTIC SIZES
 
