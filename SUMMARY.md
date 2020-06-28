@@ -7,6 +7,7 @@
 * [Full Article](classes/fullarticle.md)
 * [Resume](classes/resume.md)
 * [Thesis](classes/thesis.md)
+* [Cover Letter](classes/cover.md)
 
 ## Packages
 

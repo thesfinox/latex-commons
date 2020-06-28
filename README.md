@@ -12,8 +12,9 @@ This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 Inter
 
 ### Classes
 
-* [Full Article](classes/fullarticle.md): research papers with a nice typesetting.
 * [Resume](classes/resume.md): one page resume template typeset in two columns.
+* [Cover letter](classes/cover.md): a one page cover letter template.
+* [Full Article](classes/fullarticle.md): research papers with a nice typesetting.
 * [Thesis](classes/thesis.md): Ph.D. thesis with simple title pages and sectioning.
 
 ### Packages
