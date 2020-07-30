@@ -160,7 +160,7 @@
             \ifthenelse{\isundefined{\x}}{}{\x~}
         }
         \end{cvsocial}
-        \vspace{2em}
+        \vspace{1em}
     }
 \makeatother
 
