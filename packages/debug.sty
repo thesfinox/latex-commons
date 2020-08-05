@@ -1,16 +1,21 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{debug}[2020/06/10 Debug package]
 
-\RequirePackage{xcolor} %---- provide colours
+\RequirePackage{xparse}
+\RequirePackage{marginnote}
+\RequirePackage[usenames,
+                dvipsnames,
+                svgnames,
+                table]{xcolor} %---- provide colours
 
 \ProcessOptions\relax
 
 \newcounter{draftcommentcnt}
-\providecommand{\draftcomment}[2][red]
-{%
-  \stepcounter{draftcommentcnt}
-  \noindent\textcolor{#1}{#2}
-  \marginpar{\textcolor{#1}{$\Leftarrow$\arabic{draftcommentcnt}}}
+\NewDocumentCommand{\draftcomment}{s O{red} m}{%
+        \def\margnote{\IfBooleanTF{#1}{\marginnote}{\marginpar}}%
+        \stepcounter{draftcommentcnt}%
+        \textcolor{#2}{#3}%
+        \margnote{\textcolor{#2}{$\Leftarrow$ \arabic{draftcommentcnt}}}%
 }
 
 % vim: ft=tex

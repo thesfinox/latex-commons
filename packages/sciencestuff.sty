@@ -1,19 +1,46 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{sciencestuff}[2020/06/10 Science related stuff]
+\ProvidesPackage{sciencestuff}[2020/04/08 Science related stuff]
 
-\RequirePackage{amsmath} %------------------- math mode
-\RequirePackage{amssymb} %------------------- math symbols
-\RequirePackage{amsfonts} %------------------ math fonts
-\RequirePackage{dsfont} %-------------------- improved math set symbols
-\RequirePackage{upgreek} %------------------- better Greek alphabet
-\RequirePackage{physics} %------------------- full physics-related commands
-\RequirePackage{siunitx} %------------------- SI units formatting
-\RequirePackage{graphicx} %------------------ images and figures
-\RequirePackage{xspace} %-------------------- use with \newcommand to insert space
-\RequirePackage{ifthen} %-------------------- conditionals
-\RequirePackage[sort,english]{cleveref} %---- nicer citations and references
+\RequirePackage{amsmath} %--------------------- math mode
+\RequirePackage{amssymb} %--------------------- math symbols
+\RequirePackage{amsfonts} %-------------------- math fonts
+\RequirePackage{mathtools} %------------------- mathematical tools
+\RequirePackage{mathrsfs} %-------------------- better cal
+\RequirePackage{slashed} %--------------------- slashed characters
+\RequirePackage{tensor} %---------------------- write tensors
+\RequirePackage{listings} %-------------------- code sections
+\RequirePackage{framed} %---------------------- better frames
+\RequirePackage{mdframed} %-------------------- better frames
+\RequirePackage[amsmath,
+                hyperref,
+                framed]{ntheorem} %------------ improved theorem envoronment
+\RequirePackage[all]{hypcap} %----------------- adjust anchor of captions
+\RequirePackage{dsfont} %---------------------- improved math set symbols
+\RequirePackage{upgreek} %--------------------- better Greek alphabet
+\RequirePackage{physics} %--------------------- full physics-related commands
+\RequirePackage{siunitx} %--------------------- SI units formatting
+\RequirePackage{graphicx} %-------------------- images and figures
+\RequirePackage{ifthen} %---------------------- conditionals
+\RequirePackage[sort&compress,
+                english]{cleveref} %----------- nicer citations and references
+\RequirePackage[compat=1.1.0]{tikz-feynman} %-- Feynman diagrams
 
 \ProcessOptions\relax
+
+%---- prepare packages
+\tikzfeynmanset{/tikzfeynman/warn luatex=false}
+
+\lstset{%
+    language=Python,
+    tabsize=4,
+    morecomment=[l]{\#},
+    basicstyle=\ttfamily\small,
+    showstringspaces=false,
+    captionpos=b,
+    breaklines=true
+}
+\lstset{escapeinside={(*@}{@*)}}
+\lstdefinestyle{boxed}{frame=single, numbers=left}
 
 %---- numbering (number equations, figures and tables within section)
 
@@ -64,107 +91,135 @@
 
 %---- numerical sets
 
-\providecommand{\1}{\mathds{1}}
-\providecommand{\N}{\mathds{N}}
-\providecommand{\Q}{\mathds{Q}}
-\providecommand{\R}{\mathds{R}}
-\providecommand{\Z}{\mathds{Z}}
+\providecommand{\1}{\ensuremath{\mathds{1}}}
+\providecommand{\N}{\ensuremath{\mathds{N}}}
+\providecommand{\Q}{\ensuremath{\mathds{Q}}}
+\providecommand{\R}{\ensuremath{\mathds{R}}}
+\providecommand{\Z}{\ensuremath{\mathds{Z}}}
+\providecommand{\C}{\ensuremath{\mathds{C}}}
 
 %---- calligraphic letters
 
-\providecommand{\cA}{\mathcal{A}}
-\providecommand{\cB}{\mathcal{B}}
-\providecommand{\cC}{\mathcal{C}}
-\providecommand{\cD}{\mathcal{D}}
-\providecommand{\cE}{\mathcal{E}}
-\providecommand{\cF}{\mathcal{F}}
-\providecommand{\cG}{\mathcal{G}}
-\providecommand{\cH}{\mathcal{H}}
-\providecommand{\cI}{\mathcal{I}}
-\providecommand{\cJ}{\mathcal{J}}
-\providecommand{\cK}{\mathcal{K}}
-\providecommand{\cL}{\mathcal{L}}
-\providecommand{\cM}{\mathcal{M}}
-\providecommand{\cN}{\mathcal{N}}
-\providecommand{\cO}{\mathcal{O}}
-\providecommand{\cP}{\mathcal{P}}
-\providecommand{\cQ}{\mathcal{Q}}
-\providecommand{\cR}{\mathcal{R}}
-\providecommand{\cS}{\mathcal{S}}
-\providecommand{\cT}{\mathcal{T}}
-\providecommand{\cU}{\mathcal{U}}
-\providecommand{\cV}{\mathcal{V}}
-\providecommand{\cW}{\mathcal{W}}
-\providecommand{\cX}{\mathcal{X}}
-\providecommand{\cY}{\mathcal{Y}}
-\providecommand{\cZ}{\mathcal{Z}}
+\providecommand{\cA}{\ensuremath{\mathcal{A}}}
+\providecommand{\cB}{\ensuremath{\mathcal{B}}}
+\providecommand{\cC}{\ensuremath{\mathcal{C}}}
+\providecommand{\cD}{\ensuremath{\mathcal{D}}}
+\providecommand{\cE}{\ensuremath{\mathcal{E}}}
+\providecommand{\cF}{\ensuremath{\mathcal{F}}}
+\providecommand{\cG}{\ensuremath{\mathcal{G}}}
+\providecommand{\cH}{\ensuremath{\mathcal{H}}}
+\providecommand{\cI}{\ensuremath{\mathcal{I}}}
+\providecommand{\cJ}{\ensuremath{\mathcal{J}}}
+\providecommand{\cK}{\ensuremath{\mathcal{K}}}
+\providecommand{\cL}{\ensuremath{\mathcal{L}}}
+\providecommand{\cM}{\ensuremath{\mathcal{M}}}
+\providecommand{\cN}{\ensuremath{\mathcal{N}}}
+\providecommand{\cO}{\ensuremath{\mathcal{O}}}
+\providecommand{\cP}{\ensuremath{\mathcal{P}}}
+\providecommand{\cQ}{\ensuremath{\mathcal{Q}}}
+\providecommand{\cR}{\ensuremath{\mathcal{R}}}
+\providecommand{\cS}{\ensuremath{\mathcal{S}}}
+\providecommand{\cT}{\ensuremath{\mathcal{T}}}
+\providecommand{\cU}{\ensuremath{\mathcal{U}}}
+\providecommand{\cV}{\ensuremath{\mathcal{V}}}
+\providecommand{\cW}{\ensuremath{\mathcal{W}}}
+\providecommand{\cX}{\ensuremath{\mathcal{X}}}
+\providecommand{\cY}{\ensuremath{\mathcal{Y}}}
+\providecommand{\cZ}{\ensuremath{\mathcal{Z}}}
+
+\providecommand{\ccA}{\ensuremath{\mathscr{A}}}
+\providecommand{\ccB}{\ensuremath{\mathscr{B}}}
+\providecommand{\ccC}{\ensuremath{\mathscr{C}}}
+\providecommand{\ccD}{\ensuremath{\mathscr{D}}}
+\providecommand{\ccE}{\ensuremath{\mathscr{E}}}
+\providecommand{\ccF}{\ensuremath{\mathscr{F}}}
+\providecommand{\ccG}{\ensuremath{\mathscr{G}}}
+\providecommand{\ccH}{\ensuremath{\mathscr{H}}}
+\providecommand{\ccI}{\ensuremath{\mathscr{I}}}
+\providecommand{\ccJ}{\ensuremath{\mathscr{J}}}
+\providecommand{\ccK}{\ensuremath{\mathscr{K}}}
+\providecommand{\ccL}{\ensuremath{\mathscr{L}}}
+\providecommand{\ccM}{\ensuremath{\mathscr{M}}}
+\providecommand{\ccN}{\ensuremath{\mathscr{N}}}
+\providecommand{\ccO}{\ensuremath{\mathscr{O}}}
+\providecommand{\ccP}{\ensuremath{\mathscr{P}}}
+\providecommand{\ccQ}{\ensuremath{\mathscr{Q}}}
+\providecommand{\ccR}{\ensuremath{\mathscr{R}}}
+\providecommand{\ccS}{\ensuremath{\mathscr{S}}}
+\providecommand{\ccT}{\ensuremath{\mathscr{T}}}
+\providecommand{\ccU}{\ensuremath{\mathscr{U}}}
+\providecommand{\ccV}{\ensuremath{\mathscr{V}}}
+\providecommand{\ccW}{\ensuremath{\mathscr{W}}}
+\providecommand{\ccX}{\ensuremath{\mathscr{X}}}
+\providecommand{\ccY}{\ensuremath{\mathscr{Y}}}
+\providecommand{\ccZ}{\ensuremath{\mathscr{Z}}}
 
 %---- roman letters
 
-\providecommand{\rA}{\mathrm{A}}
-\providecommand{\rB}{\mathrm{B}}
-\providecommand{\rC}{\mathrm{C}}
-\providecommand{\rD}{\mathrm{D}}
-\providecommand{\rE}{\mathrm{E}}
-\providecommand{\rF}{\mathrm{F}}
-\providecommand{\rG}{\mathrm{G}}
-\providecommand{\rH}{\mathrm{H}}
-\providecommand{\rI}{\mathrm{I}}
-\providecommand{\rJ}{\mathrm{J}}
-\providecommand{\rK}{\mathrm{K}}
-\providecommand{\rL}{\mathrm{L}}
-\providecommand{\rM}{\mathrm{M}}
-\providecommand{\rN}{\mathrm{N}}
-\providecommand{\rO}{\mathrm{O}}
-\providecommand{\rP}{\mathrm{P}}
-\providecommand{\rQ}{\mathrm{Q}}
-\providecommand{\rR}{\mathrm{R}}
-\providecommand{\rS}{\mathrm{S}}
-\providecommand{\rT}{\mathrm{T}}
-\providecommand{\rU}{\mathrm{U}}
-\providecommand{\rV}{\mathrm{V}}
-\providecommand{\rW}{\mathrm{W}}
-\providecommand{\rX}{\mathrm{X}}
-\providecommand{\rY}{\mathrm{Y}}
-\providecommand{\rZ}{\mathrm{Z}}
+\providecommand{\rA}{\ensuremath{\mathrm{A}}}
+\providecommand{\rB}{\ensuremath{\mathrm{B}}}
+\providecommand{\rC}{\ensuremath{\mathrm{C}}}
+\providecommand{\rD}{\ensuremath{\mathrm{D}}}
+\providecommand{\rE}{\ensuremath{\mathrm{E}}}
+\providecommand{\rF}{\ensuremath{\mathrm{F}}}
+\providecommand{\rG}{\ensuremath{\mathrm{G}}}
+\providecommand{\rH}{\ensuremath{\mathrm{H}}}
+\providecommand{\rI}{\ensuremath{\mathrm{I}}}
+\providecommand{\rJ}{\ensuremath{\mathrm{J}}}
+\providecommand{\rK}{\ensuremath{\mathrm{K}}}
+\providecommand{\rL}{\ensuremath{\mathrm{L}}}
+\providecommand{\rM}{\ensuremath{\mathrm{M}}}
+\providecommand{\rN}{\ensuremath{\mathrm{N}}}
+\providecommand{\rO}{\ensuremath{\mathrm{O}}}
+\providecommand{\rP}{\ensuremath{\mathrm{P}}}
+\providecommand{\rQ}{\ensuremath{\mathrm{Q}}}
+\providecommand{\rR}{\ensuremath{\mathrm{R}}}
+\providecommand{\rS}{\ensuremath{\mathrm{S}}}
+\providecommand{\rT}{\ensuremath{\mathrm{T}}}
+\providecommand{\rU}{\ensuremath{\mathrm{U}}}
+\providecommand{\rV}{\ensuremath{\mathrm{V}}}
+\providecommand{\rW}{\ensuremath{\mathrm{W}}}
+\providecommand{\rX}{\ensuremath{\mathrm{X}}}
+\providecommand{\rY}{\ensuremath{\mathrm{Y}}}
+\providecommand{\rZ}{\ensuremath{\mathrm{Z}}}
 
 %---- frak letters
 
-\providecommand{\fA}{\mathfrak{A}}
-\providecommand{\fB}{\mathfrak{B}}
-\providecommand{\fC}{\mathfrak{C}}
-\providecommand{\fD}{\mathfrak{D}}
-\providecommand{\fE}{\mathfrak{E}}
-\providecommand{\fF}{\mathfrak{F}}
-\providecommand{\fG}{\mathfrak{G}}
-\providecommand{\fH}{\mathfrak{H}}
-\providecommand{\fI}{\mathfrak{I}}
-\providecommand{\fJ}{\mathfrak{J}}
-\providecommand{\fK}{\mathfrak{K}}
-\providecommand{\fL}{\mathfrak{L}}
-\providecommand{\fM}{\mathfrak{M}}
-\providecommand{\fN}{\mathfrak{N}}
-\providecommand{\fO}{\mathfrak{O}}
-\providecommand{\fP}{\mathfrak{P}}
-\providecommand{\fQ}{\mathfrak{Q}}
-\providecommand{\fR}{\mathfrak{R}}
-\providecommand{\fS}{\mathfrak{S}}
-\providecommand{\fT}{\mathfrak{T}}
-\providecommand{\fU}{\mathfrak{U}}
-\providecommand{\fV}{\mathfrak{V}}
-\providecommand{\fW}{\mathfrak{W}}
-\providecommand{\fX}{\mathfrak{X}}
-\providecommand{\fY}{\mathfrak{Y}}
-\providecommand{\fZ}{\mathfrak{Z}}
+\providecommand{\fA}{\ensuremath{\mathfrak{A}}}
+\providecommand{\fB}{\ensuremath{\mathfrak{B}}}
+\providecommand{\fC}{\ensuremath{\mathfrak{C}}}
+\providecommand{\fD}{\ensuremath{\mathfrak{D}}}
+\providecommand{\fE}{\ensuremath{\mathfrak{E}}}
+\providecommand{\fF}{\ensuremath{\mathfrak{F}}}
+\providecommand{\fG}{\ensuremath{\mathfrak{G}}}
+\providecommand{\fH}{\ensuremath{\mathfrak{H}}}
+\providecommand{\fI}{\ensuremath{\mathfrak{I}}}
+\providecommand{\fJ}{\ensuremath{\mathfrak{J}}}
+\providecommand{\fK}{\ensuremath{\mathfrak{K}}}
+\providecommand{\fL}{\ensuremath{\mathfrak{L}}}
+\providecommand{\fM}{\ensuremath{\mathfrak{M}}}
+\providecommand{\fN}{\ensuremath{\mathfrak{N}}}
+\providecommand{\fO}{\ensuremath{\mathfrak{O}}}
+\providecommand{\fP}{\ensuremath{\mathfrak{P}}}
+\providecommand{\fQ}{\ensuremath{\mathfrak{Q}}}
+\providecommand{\fR}{\ensuremath{\mathfrak{R}}}
+\providecommand{\fS}{\ensuremath{\mathfrak{S}}}
+\providecommand{\fT}{\ensuremath{\mathfrak{T}}}
+\providecommand{\fU}{\ensuremath{\mathfrak{U}}}
+\providecommand{\fV}{\ensuremath{\mathfrak{V}}}
+\providecommand{\fW}{\ensuremath{\mathfrak{W}}}
+\providecommand{\fX}{\ensuremath{\mathfrak{X}}}
+\providecommand{\fY}{\ensuremath{\mathfrak{Y}}}
+\providecommand{\fZ}{\ensuremath{\mathfrak{Z}}}
 
 %---- groups
 
-\providecommand{\O}[1]{\mathrm{O}(#1)}
-\providecommand{\SO}[1]{\mathrm{SO}(#1)}
-\providecommand{\U}[1]{\mathrm{U}(#1)}
-\providecommand{\SU}[1]{\mathrm{SU}(#1)}
-\providecommand{\SL}[2]{\mathrm{SL}_{#1}(#2)}
-\providecommand{\GL}[2]{\mathrm{GL}_{#1}(#2)}
+\providecommand{\O}[1]{\ensuremath{\mathrm{O}(#1)}}
+\providecommand{\SO}[1]{\ensuremath{\mathrm{SO}(#1)}}
+\providecommand{\U}[1]{\ensuremath{\mathrm{U}(#1)}}
+\providecommand{\SU}[1]{\ensuremath{\mathrm{SU}(#1)}}
+\providecommand{\SL}[2]{\ensuremath{\mathrm{SL}_{#1}(#2)}}
+\providecommand{\GL}[2]{\ensuremath{\mathrm{GL}_{#1}(#2)}}
 
 %---- inline partial derivatives (use $\ipd{s}$ for $\partial_s$)
 
