@@ -87,7 +87,7 @@
 
 \renewcommand{\Affilfont}{\small}
 \providecommand{\email}[1]{\href{mailto:#1}{\nolinkurl{#1}}}
-\providecommand{\emailfoot}[1]{\thanks{\email{#1}}}
+\providecommand{\emailfoot}[1]{\thanks{e-mail:~\email{#1}}}
 \providecommand{\arxivno}[1]{\href{http://arxiv.org/abs/#1}{\texttt{#1}}}
 \providecommand{\doi}[1]{\href{\http://dx.doi.org/#1}{\nolinkurl{#1}}}
 
