@@ -14,14 +14,18 @@
 \RequirePackage{caption} %---------------------- better captions
 \RequirePackage{enumitem} %--------------------- better item in enumerations
 \RequirePackage{float} %------------------------ manage floating objects
-\RequirePackage{xspace}   %--------------------- insert correct space
-\RequirePackage{xparse}   %--------------------- improved \newcommand
+\RequirePackage{xspace} %----------------------- insert correct space
+\RequirePackage{xparse} %----------------------- improved \newcommand
 \RequirePackage[multiple]{footmisc} %----------- better footer
 \RequirePackage{marginnote} %------------------- use margin note in floats
 \RequirePackage{booktabs} %--------------------- nice tables
 \RequirePackage{makecell} %--------------------- custom cells in tabular
 \RequirePackage{multicol} %--------------------- multi-column environment
 \RequirePackage{multirow} %--------------------- multi-row environment
+\RequirePackage{framed} %----------------------- better frames
+\RequirePackage{mdframed} %--------------------- better frames
+\RequirePackage{hyperref} %--------------------- load hyperref
+\RequirePackage[all]{hypcap} %------------------ adjust anchor of captions
 \RequirePackage[usenames,
                 dvipsnames,
                 svgnames,
