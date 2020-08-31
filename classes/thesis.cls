@@ -72,31 +72,21 @@
 \providecommand{\theschool}{\@school}
 \providecommand{\thelogo}{\@logo}
 
-\makeatother
-
 \hypersetup
 {%
-  pdftitle={\thetitle},
+  pdftitle={\@title},
   pdfsubject={Thesis},
-  pdfauthor={\theauthor},
+  pdfauthor={\@author}
   pdfkeywords={thesis, graduation, doctoral, phd},
-  pdfstartview={FitH},
-  pdfcreator={XeLaTeX},
-  pdfproducer={XeLaTeX},
-  pdflang={en-GB},
-  pdfpagemode={UseOutlines},
-  bookmarksopen={true},
-  bookmarksnumbered={true},
-  hidelinks,
+  breaklinks=true,
   linktocpage,
-  colorlinks={true},
-  linkcolor={blue},
-  urlcolor={blue},
-  filecolor={blue},
-  runcolor={blue},
-  menucolor={blue},
-  citecolor={red}
+  colorlinks=true,
+  urlcolor=blue,
+  linkcolor=blue,
+  citecolor=red
 }
+
+\makeatother
 
 %---- titlepage
 
