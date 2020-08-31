@@ -5,7 +5,6 @@
 %---- packages
 
 \RequirePackage{geometry} %--------------------- manipulate page geometry
-\RequirePackage{fontspec} %--------------------- alternative fonts
 \RequirePackage{graphicx} %--------------------- pictures and figures
 \RequirePackage{booktabs} %--------------------- nice tables
 \RequirePackage{multicol} %--------------------- multi-column environment
