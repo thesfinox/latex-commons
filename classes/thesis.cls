@@ -44,7 +44,7 @@
                 citestyle=numeric-comp,
                 sorting=none,
                 sortcites=true,
-                style=ieee,
+                %style=ieee,
                 maxnames=3]{biblatex} %--------- bibliography backend
 \RequirePackage{bookmark} %--------------------- hyperref and links
 
@@ -99,11 +99,12 @@
 \providecommand{\theschool}{\@school}
 \providecommand{\thelogo}{\@logo}
 
+\makeatother
+
 \hypersetup
 {%
-  pdftitle={\@title},
+  pdftitle={\thetitle},
   pdfsubject={Thesis},
-  pdfauthor={\@author}
   pdfkeywords={thesis, graduation, doctoral, phd},
   breaklinks=true,
   linktocpage,
@@ -112,8 +113,6 @@
   linkcolor=blue,
   citecolor=red
 }
-
-\makeatother
 
 %---- titlepage
 
@@ -136,7 +135,9 @@
 
   \vfill
 
-  {\Large \bf \thetitle}
+  \begin{center}
+    {\Large \bf \thetitle}
+  \end{center}
 
   \vspace{4\blockskip}
 
