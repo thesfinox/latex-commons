@@ -181,10 +181,11 @@
 
 \newcommand{\plaintoc}
 {%
-  \thispagestyle{plain}
+  \pagestyle{plain}
   \renewcommand*{\contentsname}{\Huge Table of Contents}
   \tableofcontents
   \cleardoubleplainpage{}
+  \pagestyle{fancy}
 }
 
 %---- abstract
