@@ -44,7 +44,7 @@
                 citestyle=numeric-comp,
                 sorting=none,
                 sortcites=true,
-                %style=ieee,
+                style=ieee,
                 maxnames=3]{biblatex} %--------- bibliography backend
 \RequirePackage{bookmark} %--------------------- hyperref and links
 
