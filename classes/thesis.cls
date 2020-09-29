@@ -36,9 +36,10 @@
 \RequirePackage{titlesec} %--------------------- custom title section
 \RequirePackage{changepage} %------------------- change page layout
 \RequirePackage{lastpage} %--------------------- reference to last page
+\RequirePackage{tocloft} %---------------------- modify table of contents
 \RequirePackage[type={CC},
                 modifier={by-nc-nd},
-                version={4.0}]{doclicense} %- licence
+                version={4.0}]{doclicense} %---- licence
 \RequirePackage[nottoc]{tocbibind} %------------ put bibliography in TOC
 \RequirePackage[backend=biber,
                 citestyle=numeric-comp,
@@ -75,9 +76,14 @@
 
 \newlength{\blockskip}
 \setlength\blockskip{1em}
+
 \newlength{\sepwidth}
 \setlength\sepwidth{1pt}
 \setlength\parskip{1em}
+
+%---- table of contents
+
+\setlength\cftbeforesubsecskip{5pt}
 
 %---- metadata
 
@@ -195,7 +201,7 @@
   \thispagestyle{plain}
 
   \noindent {\Large \sc Abstract} \\
-  \rule{0.99\textwidth}{\sepwidth}
+  \rule{0.99\linewidth}{\sepwidth}
 }
 {%
   \vfill
@@ -208,11 +214,11 @@
   \thispagestyle{plain}
 
   \noindent {\Large \sc Acknowledgements} \\
-  \rule{0.99\textwidth}{\sepwidth}
+  \rule{0.99\linewidth}{\sepwidth}
 }
 {%
   \vspace{\parskip}
-  \raggedleft\theauthor
+  \theauthor
   \vfill
 }
 
