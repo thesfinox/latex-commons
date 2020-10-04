@@ -4,6 +4,7 @@
 \RequirePackage{amsmath} %--------------------- math mode
 \RequirePackage{amssymb} %--------------------- math symbols
 \RequirePackage{amsfonts} %-------------------- math fonts
+\RequirePackage{bm} %-------------------------- boldsymbols
 \RequirePackage{mathtools} %------------------- mathematical tools
 \RequirePackage{mathrsfs} %-------------------- better cal
 \RequirePackage{slashed} %--------------------- slashed characters
@@ -266,58 +267,58 @@
 
 %---- dot, bar, tilde, hat
 
-\providecommand{\da}{\ensuremath{\dot{a}}\xspace}
-\providecommand{\db}{\ensuremath{\dot{b}}\xspace}
-\providecommand{\dc}{\ensuremath{\dot{c}}\xspace}
-\providecommand{\dd}{\ensuremath{\dot{d}}\xspace}
-\providecommand{\de}{\ensuremath{\dot{e}}\xspace}
-\providecommand{\df}{\ensuremath{\dot{f}}\xspace}
-\providecommand{\dg}{\ensuremath{\dot{g}}\xspace}
-\providecommand{\dh}{\ensuremath{\dot{h}}\xspace}
-\providecommand{\di}{\ensuremath{\dot{i}}\xspace}
-\providecommand{\dj}{\ensuremath{\dot{j}}\xspace}
-\providecommand{\dk}{\ensuremath{\dot{k}}\xspace}
-\providecommand{\dl}{\ensuremath{\dot{l}}\xspace}
-\providecommand{\dm}{\ensuremath{\dot{m}}\xspace}
-\providecommand{\dn}{\ensuremath{\dot{n}}\xspace}
-\providecommand{\do}{\ensuremath{\dot{o}}\xspace}
-\providecommand{\dp}{\ensuremath{\dot{p}}\xspace}
-\providecommand{\dq}{\ensuremath{\dot{q}}\xspace}
-\providecommand{\dr}{\ensuremath{\dot{r}}\xspace}
-\providecommand{\ds}{\ensuremath{\dot{s}}\xspace}
-\providecommand{\dt}{\ensuremath{\dot{t}}\xspace}
-\providecommand{\du}{\ensuremath{\dot{u}}\xspace}
-\providecommand{\dv}{\ensuremath{\dot{v}}\xspace}
-\providecommand{\dw}{\ensuremath{\dot{w}}\xspace}
-\providecommand{\dx}{\ensuremath{\dot{x}}\xspace}
-\providecommand{\dy}{\ensuremath{\dot{y}}\xspace}
-\providecommand{\dz}{\ensuremath{\dot{z}}\xspace}
-\providecommand{\dA}{\ensuremath{\dot{A}}\xspace}
-\providecommand{\dB}{\ensuremath{\dot{B}}\xspace}
-\providecommand{\dC}{\ensuremath{\dot{C}}\xspace}
-\providecommand{\dD}{\ensuremath{\dot{D}}\xspace}
-\providecommand{\dE}{\ensuremath{\dot{E}}\xspace}
-\providecommand{\dF}{\ensuremath{\dot{F}}\xspace}
-\providecommand{\dG}{\ensuremath{\dot{G}}\xspace}
-\providecommand{\dH}{\ensuremath{\dot{H}}\xspace}
-\providecommand{\dI}{\ensuremath{\dot{I}}\xspace}
-\providecommand{\dJ}{\ensuremath{\dot{J}}\xspace}
-\providecommand{\dK}{\ensuremath{\dot{K}}\xspace}
-\providecommand{\dL}{\ensuremath{\dot{L}}\xspace}
-\providecommand{\dM}{\ensuremath{\dot{M}}\xspace}
-\providecommand{\dN}{\ensuremath{\dot{N}}\xspace}
-\providecommand{\dO}{\ensuremath{\dot{O}}\xspace}
-\providecommand{\dP}{\ensuremath{\dot{P}}\xspace}
-\providecommand{\dQ}{\ensuremath{\dot{Q}}\xspace}
-\providecommand{\dR}{\ensuremath{\dot{R}}\xspace}
-\providecommand{\dS}{\ensuremath{\dot{S}}\xspace}
-\providecommand{\dT}{\ensuremath{\dot{T}}\xspace}
-\providecommand{\dU}{\ensuremath{\dot{U}}\xspace}
-\providecommand{\dV}{\ensuremath{\dot{V}}\xspace}
-\providecommand{\dW}{\ensuremath{\dot{W}}\xspace}
-\providecommand{\dX}{\ensuremath{\dot{X}}\xspace}
-\providecommand{\dY}{\ensuremath{\dot{Y}}\xspace}
-\providecommand{\dZ}{\ensuremath{\dot{Z}}\xspace}
+\providecommand{\dota}{\ensuremath{\dot{a}}\xspace}
+\providecommand{\dotb}{\ensuremath{\dot{b}}\xspace}
+\providecommand{\dotc}{\ensuremath{\dot{c}}\xspace}
+\providecommand{\dotd}{\ensuremath{\dot{d}}\xspace}
+\providecommand{\dote}{\ensuremath{\dot{e}}\xspace}
+\providecommand{\dotf}{\ensuremath{\dot{f}}\xspace}
+\providecommand{\dotg}{\ensuremath{\dot{g}}\xspace}
+\providecommand{\doth}{\ensuremath{\dot{h}}\xspace}
+\providecommand{\doti}{\ensuremath{\dot{i}}\xspace}
+\providecommand{\dotj}{\ensuremath{\dot{j}}\xspace}
+\providecommand{\dotk}{\ensuremath{\dot{k}}\xspace}
+\providecommand{\dotl}{\ensuremath{\dot{l}}\xspace}
+\providecommand{\dotm}{\ensuremath{\dot{m}}\xspace}
+\providecommand{\dotn}{\ensuremath{\dot{n}}\xspace}
+\providecommand{\doto}{\ensuremath{\dot{o}}\xspace}
+\providecommand{\dotp}{\ensuremath{\dot{p}}\xspace}
+\providecommand{\dotq}{\ensuremath{\dot{q}}\xspace}
+\providecommand{\dotr}{\ensuremath{\dot{r}}\xspace}
+\providecommand{\dots}{\ensuremath{\dot{s}}\xspace}
+\providecommand{\dott}{\ensuremath{\dot{t}}\xspace}
+\providecommand{\dotu}{\ensuremath{\dot{u}}\xspace}
+\providecommand{\dotv}{\ensuremath{\dot{v}}\xspace}
+\providecommand{\dotw}{\ensuremath{\dot{w}}\xspace}
+\providecommand{\dotx}{\ensuremath{\dot{x}}\xspace}
+\providecommand{\doty}{\ensuremath{\dot{y}}\xspace}
+\providecommand{\dotz}{\ensuremath{\dot{z}}\xspace}
+\providecommand{\dotA}{\ensuremath{\dot{A}}\xspace}
+\providecommand{\dotB}{\ensuremath{\dot{B}}\xspace}
+\providecommand{\dotC}{\ensuremath{\dot{C}}\xspace}
+\providecommand{\dotD}{\ensuremath{\dot{D}}\xspace}
+\providecommand{\dotE}{\ensuremath{\dot{E}}\xspace}
+\providecommand{\dotF}{\ensuremath{\dot{F}}\xspace}
+\providecommand{\dotG}{\ensuremath{\dot{G}}\xspace}
+\providecommand{\dotH}{\ensuremath{\dot{H}}\xspace}
+\providecommand{\dotI}{\ensuremath{\dot{I}}\xspace}
+\providecommand{\dotJ}{\ensuremath{\dot{J}}\xspace}
+\providecommand{\dotK}{\ensuremath{\dot{K}}\xspace}
+\providecommand{\dotL}{\ensuremath{\dot{L}}\xspace}
+\providecommand{\dotM}{\ensuremath{\dot{M}}\xspace}
+\providecommand{\dotN}{\ensuremath{\dot{N}}\xspace}
+\providecommand{\dotO}{\ensuremath{\dot{O}}\xspace}
+\providecommand{\dotP}{\ensuremath{\dot{P}}\xspace}
+\providecommand{\dotQ}{\ensuremath{\dot{Q}}\xspace}
+\providecommand{\dotR}{\ensuremath{\dot{R}}\xspace}
+\providecommand{\dotS}{\ensuremath{\dot{S}}\xspace}
+\providecommand{\dotT}{\ensuremath{\dot{T}}\xspace}
+\providecommand{\dotU}{\ensuremath{\dot{U}}\xspace}
+\providecommand{\dotV}{\ensuremath{\dot{V}}\xspace}
+\providecommand{\dotW}{\ensuremath{\dot{W}}\xspace}
+\providecommand{\dotX}{\ensuremath{\dot{X}}\xspace}
+\providecommand{\dotY}{\ensuremath{\dot{Y}}\xspace}
+\providecommand{\dotZ}{\ensuremath{\dot{Z}}\xspace}
 
 \providecommand{\bara}{\ensuremath{\overline{a}}\xspace}
 \providecommand{\barb}{\ensuremath{\overline{b}}\xspace}
