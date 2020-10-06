@@ -47,6 +47,7 @@
 \numberwithin{table}{section}
 
 %---- abbreviations
+
 \providecommand{\sm}{\textsc{sm}\xspace}
 \providecommand{\eom}{\textsc{e.o.m.}\xspace}
 \providecommand{\cft}{\textsc{CFT}\xspace}
@@ -54,10 +55,13 @@
 \providecommand{\qed}{\textsc{QED}\xspace}
 \providecommand{\qcd}{\textsc{QCD}\xspace}
 \providecommand{\ope}{\textsc{o.p.e.}\xspace}
+\providecommand{\ode}{\textsc{o.d.e.}\xspace}
+\providecommand{\dof}{\textsc{d.o.f.}\xspace}
 \providecommand{\cy}{\textsc{CY}\xspace}
 \providecommand{\lhs}{\textsc{lhs}\xspace}
 \providecommand{\rhs}{\textsc{rhs}\xspace}
 \providecommand{\ap}{\ensuremath{\alpha'}\xspace}
+\providecommand{\sgn}{\ensuremath{\mathrm{sign}}}
 
 %---- remap greek letters
 
@@ -88,6 +92,7 @@
 \renewcommand{\vartheta}{\ensuremath{\upvartheta}\xspace}
 \renewcommand{\varpi}{\ensuremath{\upvarpi}\xspace}
 \renewcommand{\varphi}{\ensuremath{\upvarphi}\xspace}
+\renewcommand{\varsigma}{\ensuremath{\upvarsigma}\xspace}
 \renewcommand{\Gamma}{\ensuremath{\Upgamma}\xspace}
 \renewcommand{\Delta}{\ensuremath{\Updelta}\xspace}
 \renewcommand{\Theta}{\ensuremath{\Uptheta}\xspace}
@@ -127,6 +132,7 @@
 \providecommand{\dvartheta}{\ensuremath{\dot{\upvartheta}}\xspace}
 \providecommand{\dvarpi}{\ensuremath{\dot{\upvarpi}}\xspace}
 \providecommand{\dvarphi}{\ensuremath{\dot{\upvarphi}}\xspace}
+\providecommand{\dvarsigma}{\ensuremath{\dot{\upvarsigma}}\xspace}
 \providecommand{\dGamma}{\ensuremath{\dot{\Upgamma}}\xspace}
 \providecommand{\dDelta}{\ensuremath{\dot{\Updelta}}\xspace}
 \providecommand{\dTheta}{\ensuremath{\dot{\Uptheta}}\xspace}
@@ -166,6 +172,7 @@
 \providecommand{\bvartheta}{\ensuremath{\overline{\upvartheta}}\xspace}
 \providecommand{\bvarpi}{\ensuremath{\overline{\upvarpi}}\xspace}
 \providecommand{\bvarphi}{\ensuremath{\overline{\upvarphi}}\xspace}
+\providecommand{\bvarsigma}{\ensuremath{\overline{\upvarsigma}}\xspace}
 \providecommand{\bGamma}{\ensuremath{\overline{\Upgamma}}\xspace}
 \providecommand{\bDelta}{\ensuremath{\overline{\Updelta}}\xspace}
 \providecommand{\bTheta}{\ensuremath{\overline{\Uptheta}}\xspace}
@@ -205,6 +212,7 @@
 \providecommand{\tvartheta}{\ensuremath{\widetilde{\upvartheta}}\xspace}
 \providecommand{\tvarpi}{\ensuremath{\widetilde{\upvarpi}}\xspace}
 \providecommand{\tvarphi}{\ensuremath{\widetilde{\upvarphi}}\xspace}
+\providecommand{\tvarsigma}{\ensuremath{\widetilde{\upvarsigma}}\xspace}
 \providecommand{\tGamma}{\ensuremath{\widetilde{\Upgamma}}\xspace}
 \providecommand{\tDelta}{\ensuremath{\widetilde{\Updelta}}\xspace}
 \providecommand{\tTheta}{\ensuremath{\widetilde{\Uptheta}}\xspace}
@@ -244,6 +252,7 @@
 \providecommand{\hvartheta}{\ensuremath{\widehat{\upvartheta}}\xspace}
 \providecommand{\hvarpi}{\ensuremath{\widehat{\upvarpi}}\xspace}
 \providecommand{\hvarphi}{\ensuremath{\widehat{\upvarphi}}\xspace}
+\providecommand{\hvarsigma}{\ensuremath{\widehat{\upvarsigma}}\xspace}
 \providecommand{\hGamma}{\ensuremath{\widehat{\Upgamma}}\xspace}
 \providecommand{\hDelta}{\ensuremath{\widehat{\Updelta}}\xspace}
 \providecommand{\hTheta}{\ensuremath{\widehat{\Uptheta}}\xspace}
@@ -255,6 +264,46 @@
 \providecommand{\hPhi}{\ensuremath{\widehat{\Upphi}}\xspace}
 \providecommand{\hPsi}{\ensuremath{\widehat{\Uppsi}}\xspace}
 \providecommand{\hOmega}{\ensuremath{\widehat{\Upomega}}\xspace}
+
+\providecommand{\ualpha}{\ensuremath{\underline{\upalpha}}\xspace}
+\providecommand{\ubeta}{\ensuremath{\underline{\upbeta}}\xspace}
+\providecommand{\ugamma}{\ensuremath{\underline{\upgamma}}\xspace}
+\providecommand{\udelta}{\ensuremath{\underline{\updelta}}\xspace}
+\providecommand{\uepsilon}{\ensuremath{\underline{\upepsilon}}\xspace}
+\providecommand{\uzeta}{\ensuremath{\underline{\upzeta}}\xspace}
+\providecommand{\ueta}{\ensuremath{\underline{\upeta}}\xspace}
+\providecommand{\utheta}{\ensuremath{\underline{\uptheta}}\xspace}
+\providecommand{\uiota}{\ensuremath{\underline{\upiota}}\xspace}
+\providecommand{\ukappa}{\ensuremath{\underline{\upkappa}}\xspace}
+\providecommand{\ulambda}{\ensuremath{\underline{\uplambda}}\xspace}
+\providecommand{\umu}{\ensuremath{\underline{\upmu}}\xspace}
+\providecommand{\unu}{\ensuremath{\underline{\upnu}}\xspace}
+\providecommand{\uxi}{\ensuremath{\underline{\upxi}}\xspace}
+\providecommand{\upi}{\ensuremath{\underline{\uppi}}\xspace}
+\providecommand{\urho}{\ensuremath{\underline{\uprho}}\xspace}
+\providecommand{\usigma}{\ensuremath{\underline{\upsigma}}\xspace}
+\providecommand{\utau}{\ensuremath{\underline{\uptau}}\xspace}
+\providecommand{\uupsilon}{\ensuremath{\underline{\upupsilon}}\xspace}
+\providecommand{\uphi}{\ensuremath{\underline{\upphi}}\xspace}
+\providecommand{\uchi}{\ensuremath{\underline{\upchi}}\xspace}
+\providecommand{\upsi}{\ensuremath{\underline{\uppsi}}\xspace}
+\providecommand{\uomega}{\ensuremath{\underline{\upomega}}\xspace}
+\providecommand{\uvarepsilon}{\ensuremath{\underline{\upvarepsilon}}\xspace}
+\providecommand{\uvartheta}{\ensuremath{\underline{\upvartheta}}\xspace}
+\providecommand{\uvarpi}{\ensuremath{\underline{\upvarpi}}\xspace}
+\providecommand{\uvarphi}{\ensuremath{\underline{\upvarphi}}\xspace}
+\providecommand{\uvarsigma}{\ensuremath{\underline{\upvarsigma}}\xspace}
+\providecommand{\uGamma}{\ensuremath{\underline{\Upgamma}}\xspace}
+\providecommand{\uDelta}{\ensuremath{\underline{\Updelta}}\xspace}
+\providecommand{\uTheta}{\ensuremath{\underline{\Uptheta}}\xspace}
+\providecommand{\uLambda}{\ensuremath{\underline{\Uplambda}}\xspace}
+\providecommand{\uXi}{\ensuremath{\underline{\Upxi}}\xspace}
+\providecommand{\uPi}{\ensuremath{\underline{\Uppi}}\xspace}
+\providecommand{\uSigma}{\ensuremath{\underline{\Upsigma}}\xspace}
+\providecommand{\uUpsilon}{\ensuremath{\underline{\Upupsilon}}\xspace}
+\providecommand{\uPhi}{\ensuremath{\underline{\Upphi}}\xspace}
+\providecommand{\uPsi}{\ensuremath{\underline{\Uppsi}}\xspace}
+\providecommand{\uOmega}{\ensuremath{\underline{\Upomega}}\xspace}
 
 %---- numerical sets
 
@@ -478,6 +527,59 @@
 \providecommand{\hatX}{\ensuremath{\widehat{X}}\xspace}
 \providecommand{\hatY}{\ensuremath{\widehat{Y}}\xspace}
 \providecommand{\hatZ}{\ensuremath{\widehat{Z}}\xspace}
+
+\providecommand{\undera}{\ensuremath{\underline{a}}\xspace}
+\providecommand{\underb}{\ensuremath{\underline{b}}\xspace}
+\providecommand{\underc}{\ensuremath{\underline{c}}\xspace}
+\providecommand{\underd}{\ensuremath{\underline{d}}\xspace}
+\providecommand{\undere}{\ensuremath{\underline{e}}\xspace}
+\providecommand{\underf}{\ensuremath{\underline{f}}\xspace}
+\providecommand{\underg}{\ensuremath{\underline{g}}\xspace}
+\providecommand{\underh}{\ensuremath{\underline{h}}\xspace}
+\providecommand{\underi}{\ensuremath{\underline{i}}\xspace}
+\providecommand{\underj}{\ensuremath{\underline{j}}\xspace}
+\providecommand{\underk}{\ensuremath{\underline{k}}\xspace}
+\providecommand{\underl}{\ensuremath{\underline{l}}\xspace}
+\providecommand{\underm}{\ensuremath{\underline{m}}\xspace}
+\providecommand{\undern}{\ensuremath{\underline{n}}\xspace}
+\providecommand{\undero}{\ensuremath{\underline{o}}\xspace}
+\providecommand{\underp}{\ensuremath{\underline{p}}\xspace}
+\providecommand{\underq}{\ensuremath{\underline{q}}\xspace}
+\providecommand{\underr}{\ensuremath{\underline{r}}\xspace}
+\providecommand{\unders}{\ensuremath{\underline{s}}\xspace}
+\providecommand{\undert}{\ensuremath{\underline{t}}\xspace}
+\providecommand{\underu}{\ensuremath{\underline{u}}\xspace}
+\providecommand{\underv}{\ensuremath{\underline{v}}\xspace}
+\providecommand{\underw}{\ensuremath{\underline{w}}\xspace}
+\providecommand{\underx}{\ensuremath{\underline{x}}\xspace}
+\providecommand{\undery}{\ensuremath{\underline{y}}\xspace}
+\providecommand{\underz}{\ensuremath{\underline{z}}\xspace}
+\providecommand{\underA}{\ensuremath{\underline{A}}\xspace}
+\providecommand{\underB}{\ensuremath{\underline{B}}\xspace}
+\providecommand{\underC}{\ensuremath{\underline{C}}\xspace}
+\providecommand{\underD}{\ensuremath{\underline{D}}\xspace}
+\providecommand{\underE}{\ensuremath{\underline{E}}\xspace}
+\providecommand{\underF}{\ensuremath{\underline{F}}\xspace}
+\providecommand{\underG}{\ensuremath{\underline{G}}\xspace}
+\providecommand{\underH}{\ensuremath{\underline{H}}\xspace}
+\providecommand{\underI}{\ensuremath{\underline{I}}\xspace}
+\providecommand{\underJ}{\ensuremath{\underline{J}}\xspace}
+\providecommand{\underK}{\ensuremath{\underline{K}}\xspace}
+\providecommand{\underL}{\ensuremath{\underline{L}}\xspace}
+\providecommand{\underM}{\ensuremath{\underline{M}}\xspace}
+\providecommand{\underN}{\ensuremath{\underline{N}}\xspace}
+\providecommand{\underO}{\ensuremath{\underline{O}}\xspace}
+\providecommand{\underP}{\ensuremath{\underline{P}}\xspace}
+\providecommand{\underQ}{\ensuremath{\underline{Q}}\xspace}
+\providecommand{\underR}{\ensuremath{\underline{R}}\xspace}
+\providecommand{\underS}{\ensuremath{\underline{S}}\xspace}
+\providecommand{\underT}{\ensuremath{\underline{T}}\xspace}
+\providecommand{\underU}{\ensuremath{\underline{U}}\xspace}
+\providecommand{\underV}{\ensuremath{\underline{V}}\xspace}
+\providecommand{\underW}{\ensuremath{\underline{W}}\xspace}
+\providecommand{\underX}{\ensuremath{\underline{X}}\xspace}
+\providecommand{\underY}{\ensuremath{\underline{Y}}\xspace}
+\providecommand{\underZ}{\ensuremath{\underline{Z}}\xspace}
 
 %---- calligraphic letters
 
@@ -751,6 +853,60 @@
 \providecommand{\bccY}{\ensuremath{\overline{\mathscr{Y}}}\xspace}
 \providecommand{\bccZ}{\ensuremath{\overline{\mathscr{Z}}}\xspace}
 
+\providecommand{\ucA}{\ensuremath{\underline{\mathcal{A}}}\xspace}
+\providecommand{\ucB}{\ensuremath{\underline{\mathcal{B}}}\xspace}
+\providecommand{\ucC}{\ensuremath{\underline{\mathcal{C}}}\xspace}
+\providecommand{\ucD}{\ensuremath{\underline{\mathcal{D}}}\xspace}
+\providecommand{\ucE}{\ensuremath{\underline{\mathcal{E}}}\xspace}
+\providecommand{\ucF}{\ensuremath{\underline{\mathcal{F}}}\xspace}
+\providecommand{\ucG}{\ensuremath{\underline{\mathcal{G}}}\xspace}
+\providecommand{\ucH}{\ensuremath{\underline{\mathcal{H}}}\xspace}
+\providecommand{\ucI}{\ensuremath{\underline{\mathcal{I}}}\xspace}
+\providecommand{\ucJ}{\ensuremath{\underline{\mathcal{J}}}\xspace}
+\providecommand{\ucK}{\ensuremath{\underline{\mathcal{K}}}\xspace}
+\providecommand{\ucL}{\ensuremath{\underline{\mathcal{L}}}\xspace}
+\providecommand{\ucM}{\ensuremath{\underline{\mathcal{M}}}\xspace}
+\providecommand{\ucN}{\ensuremath{\underline{\mathcal{N}}}\xspace}
+\providecommand{\ucO}{\ensuremath{\underline{\mathcal{O}}}\xspace}
+\providecommand{\ucP}{\ensuremath{\underline{\mathcal{P}}}\xspace}
+\providecommand{\ucQ}{\ensuremath{\underline{\mathcal{Q}}}\xspace}
+\providecommand{\ucR}{\ensuremath{\underline{\mathcal{R}}}\xspace}
+\providecommand{\ucS}{\ensuremath{\underline{\mathcal{S}}}\xspace}
+\providecommand{\ucT}{\ensuremath{\underline{\mathcal{T}}}\xspace}
+\providecommand{\ucU}{\ensuremath{\underline{\mathcal{U}}}\xspace}
+\providecommand{\ucV}{\ensuremath{\underline{\mathcal{V}}}\xspace}
+\providecommand{\ucW}{\ensuremath{\underline{\mathcal{W}}}\xspace}
+\providecommand{\ucX}{\ensuremath{\underline{\mathcal{X}}}\xspace}
+\providecommand{\ucY}{\ensuremath{\underline{\mathcal{Y}}}\xspace}
+\providecommand{\ucZ}{\ensuremath{\underline{\mathcal{Z}}}\xspace}
+
+\providecommand{\uccA}{\ensuremath{\underline{\mathscr{A}}}\xspace}
+\providecommand{\uccB}{\ensuremath{\underline{\mathscr{B}}}\xspace}
+\providecommand{\uccC}{\ensuremath{\underline{\mathscr{C}}}\xspace}
+\providecommand{\uccD}{\ensuremath{\underline{\mathscr{D}}}\xspace}
+\providecommand{\uccE}{\ensuremath{\underline{\mathscr{E}}}\xspace}
+\providecommand{\uccF}{\ensuremath{\underline{\mathscr{F}}}\xspace}
+\providecommand{\uccG}{\ensuremath{\underline{\mathscr{G}}}\xspace}
+\providecommand{\uccH}{\ensuremath{\underline{\mathscr{H}}}\xspace}
+\providecommand{\uccI}{\ensuremath{\underline{\mathscr{I}}}\xspace}
+\providecommand{\uccJ}{\ensuremath{\underline{\mathscr{J}}}\xspace}
+\providecommand{\uccK}{\ensuremath{\underline{\mathscr{K}}}\xspace}
+\providecommand{\uccL}{\ensuremath{\underline{\mathscr{L}}}\xspace}
+\providecommand{\uccM}{\ensuremath{\underline{\mathscr{M}}}\xspace}
+\providecommand{\uccN}{\ensuremath{\underline{\mathscr{N}}}\xspace}
+\providecommand{\uccO}{\ensuremath{\underline{\mathscr{O}}}\xspace}
+\providecommand{\uccP}{\ensuremath{\underline{\mathscr{P}}}\xspace}
+\providecommand{\uccQ}{\ensuremath{\underline{\mathscr{Q}}}\xspace}
+\providecommand{\uccR}{\ensuremath{\underline{\mathscr{R}}}\xspace}
+\providecommand{\uccS}{\ensuremath{\underline{\mathscr{S}}}\xspace}
+\providecommand{\uccT}{\ensuremath{\underline{\mathscr{T}}}\xspace}
+\providecommand{\uccU}{\ensuremath{\underline{\mathscr{U}}}\xspace}
+\providecommand{\uccV}{\ensuremath{\underline{\mathscr{V}}}\xspace}
+\providecommand{\uccW}{\ensuremath{\underline{\mathscr{W}}}\xspace}
+\providecommand{\uccX}{\ensuremath{\underline{\mathscr{X}}}\xspace}
+\providecommand{\uccY}{\ensuremath{\underline{\mathscr{Y}}}\xspace}
+\providecommand{\uccZ}{\ensuremath{\underline{\mathscr{Z}}}\xspace}
+
 %---- roman letters
 
 \providecommand{\rA}{\ensuremath{\mathrm{A}}\xspace}
@@ -833,6 +989,33 @@
 \providecommand{\trX}{\ensuremath{\widetilde{\mathrm{X}}}\xspace}
 \providecommand{\trY}{\ensuremath{\widetilde{\mathrm{Y}}}\xspace}
 \providecommand{\trZ}{\ensuremath{\widetilde{\mathrm{Z}}}\xspace}
+
+\providecommand{\urA}{\ensuremath{\underline{\mathrm{A}}}\xspace}
+\providecommand{\urB}{\ensuremath{\underline{\mathrm{B}}}\xspace}
+\providecommand{\urC}{\ensuremath{\underline{\mathrm{C}}}\xspace}
+\providecommand{\urD}{\ensuremath{\underline{\mathrm{D}}}\xspace}
+\providecommand{\urE}{\ensuremath{\underline{\mathrm{E}}}\xspace}
+\providecommand{\urF}{\ensuremath{\underline{\mathrm{F}}}\xspace}
+\providecommand{\urG}{\ensuremath{\underline{\mathrm{G}}}\xspace}
+\providecommand{\urH}{\ensuremath{\underline{\mathrm{H}}}\xspace}
+\providecommand{\urI}{\ensuremath{\underline{\mathrm{I}}}\xspace}
+\providecommand{\urJ}{\ensuremath{\underline{\mathrm{J}}}\xspace}
+\providecommand{\urK}{\ensuremath{\underline{\mathrm{K}}}\xspace}
+\providecommand{\urL}{\ensuremath{\underline{\mathrm{L}}}\xspace}
+\providecommand{\urM}{\ensuremath{\underline{\mathrm{M}}}\xspace}
+\providecommand{\urN}{\ensuremath{\underline{\mathrm{N}}}\xspace}
+\providecommand{\urO}{\ensuremath{\underline{\mathrm{O}}}\xspace}
+\providecommand{\urP}{\ensuremath{\underline{\mathrm{P}}}\xspace}
+\providecommand{\urQ}{\ensuremath{\underline{\mathrm{Q}}}\xspace}
+\providecommand{\urR}{\ensuremath{\underline{\mathrm{R}}}\xspace}
+\providecommand{\urS}{\ensuremath{\underline{\mathrm{S}}}\xspace}
+\providecommand{\urT}{\ensuremath{\underline{\mathrm{T}}}\xspace}
+\providecommand{\urU}{\ensuremath{\underline{\mathrm{U}}}\xspace}
+\providecommand{\urV}{\ensuremath{\underline{\mathrm{V}}}\xspace}
+\providecommand{\urW}{\ensuremath{\underline{\mathrm{W}}}\xspace}
+\providecommand{\urX}{\ensuremath{\underline{\mathrm{X}}}\xspace}
+\providecommand{\urY}{\ensuremath{\underline{\mathrm{Y}}}\xspace}
+\providecommand{\urZ}{\ensuremath{\underline{\mathrm{Z}}}\xspace}
 
 \providecommand{\hrA}{\ensuremath{\widehat{\mathrm{A}}}\xspace}
 \providecommand{\hrB}{\ensuremath{\widehat{\mathrm{B}}}\xspace}
@@ -1155,6 +1338,59 @@
 \providecommand{\bffY}{\ensuremath{\overline{\mathfrak{Y}}}\xspace}
 \providecommand{\bffZ}{\ensuremath{\overline{\mathfrak{Z}}}\xspace}
 
+\providecommand{\uffa}{\ensuremath{\underline{\mathfrak{a}}}\xspace}
+\providecommand{\uffb}{\ensuremath{\underline{\mathfrak{b}}}\xspace}
+\providecommand{\uffc}{\ensuremath{\underline{\mathfrak{c}}}\xspace}
+\providecommand{\uffd}{\ensuremath{\underline{\mathfrak{d}}}\xspace}
+\providecommand{\uffe}{\ensuremath{\underline{\mathfrak{e}}}\xspace}
+\providecommand{\ufff}{\ensuremath{\underline{\mathfrak{f}}}\xspace}
+\providecommand{\uffg}{\ensuremath{\underline{\mathfrak{g}}}\xspace}
+\providecommand{\uffh}{\ensuremath{\underline{\mathfrak{h}}}\xspace}
+\providecommand{\uffi}{\ensuremath{\underline{\mathfrak{i}}}\xspace}
+\providecommand{\uffj}{\ensuremath{\underline{\mathfrak{j}}}\xspace}
+\providecommand{\uffk}{\ensuremath{\underline{\mathfrak{k}}}\xspace}
+\providecommand{\uffl}{\ensuremath{\underline{\mathfrak{l}}}\xspace}
+\providecommand{\uffm}{\ensuremath{\underline{\mathfrak{m}}}\xspace}
+\providecommand{\uffn}{\ensuremath{\underline{\mathfrak{n}}}\xspace}
+\providecommand{\uffo}{\ensuremath{\underline{\mathfrak{o}}}\xspace}
+\providecommand{\uffp}{\ensuremath{\underline{\mathfrak{p}}}\xspace}
+\providecommand{\uffq}{\ensuremath{\underline{\mathfrak{q}}}\xspace}
+\providecommand{\uffr}{\ensuremath{\underline{\mathfrak{r}}}\xspace}
+\providecommand{\uffs}{\ensuremath{\underline{\mathfrak{s}}}\xspace}
+\providecommand{\ufft}{\ensuremath{\underline{\mathfrak{t}}}\xspace}
+\providecommand{\uffu}{\ensuremath{\underline{\mathfrak{u}}}\xspace}
+\providecommand{\uffv}{\ensuremath{\underline{\mathfrak{v}}}\xspace}
+\providecommand{\uffw}{\ensuremath{\underline{\mathfrak{w}}}\xspace}
+\providecommand{\uffx}{\ensuremath{\underline{\mathfrak{x}}}\xspace}
+\providecommand{\uffy}{\ensuremath{\underline{\mathfrak{y}}}\xspace}
+\providecommand{\uffz}{\ensuremath{\underline{\mathfrak{z}}}\xspace}
+\providecommand{\uffA}{\ensuremath{\underline{\mathfrak{A}}}\xspace}
+\providecommand{\uffB}{\ensuremath{\underline{\mathfrak{B}}}\xspace}
+\providecommand{\uffC}{\ensuremath{\underline{\mathfrak{C}}}\xspace}
+\providecommand{\uffD}{\ensuremath{\underline{\mathfrak{D}}}\xspace}
+\providecommand{\uffE}{\ensuremath{\underline{\mathfrak{E}}}\xspace}
+\providecommand{\uffF}{\ensuremath{\underline{\mathfrak{F}}}\xspace}
+\providecommand{\uffG}{\ensuremath{\underline{\mathfrak{G}}}\xspace}
+\providecommand{\uffH}{\ensuremath{\underline{\mathfrak{H}}}\xspace}
+\providecommand{\uffI}{\ensuremath{\underline{\mathfrak{I}}}\xspace}
+\providecommand{\uffJ}{\ensuremath{\underline{\mathfrak{J}}}\xspace}
+\providecommand{\uffK}{\ensuremath{\underline{\mathfrak{K}}}\xspace}
+\providecommand{\uffL}{\ensuremath{\underline{\mathfrak{L}}}\xspace}
+\providecommand{\uffM}{\ensuremath{\underline{\mathfrak{M}}}\xspace}
+\providecommand{\uffN}{\ensuremath{\underline{\mathfrak{N}}}\xspace}
+\providecommand{\uffO}{\ensuremath{\underline{\mathfrak{O}}}\xspace}
+\providecommand{\uffP}{\ensuremath{\underline{\mathfrak{P}}}\xspace}
+\providecommand{\uffQ}{\ensuremath{\underline{\mathfrak{Q}}}\xspace}
+\providecommand{\uffR}{\ensuremath{\underline{\mathfrak{R}}}\xspace}
+\providecommand{\uffS}{\ensuremath{\underline{\mathfrak{S}}}\xspace}
+\providecommand{\uffT}{\ensuremath{\underline{\mathfrak{T}}}\xspace}
+\providecommand{\uffU}{\ensuremath{\underline{\mathfrak{U}}}\xspace}
+\providecommand{\uffV}{\ensuremath{\underline{\mathfrak{V}}}\xspace}
+\providecommand{\uffW}{\ensuremath{\underline{\mathfrak{W}}}\xspace}
+\providecommand{\uffX}{\ensuremath{\underline{\mathfrak{X}}}\xspace}
+\providecommand{\uffY}{\ensuremath{\underline{\mathfrak{Y}}}\xspace}
+\providecommand{\uffZ}{\ensuremath{\underline{\mathfrak{Z}}}\xspace}
+
 %---- groups
 
 \providecommand{\OO}[1]{\ensuremath{\mathrm{O}(#1)}\xspace}
@@ -1165,6 +1401,7 @@
 \providecommand{\GL}[2]{\ensuremath{\mathrm{GL}_{#1}(#2)}\xspace}
 
 %---- algebras
+
 \providecommand{\liebraket}[2]{\ensuremath{\left[ #1,\, #2 \right]}}
 \providecommand{\no}[1]{\ensuremath{\colon #1 \colon}\xspace}
 
