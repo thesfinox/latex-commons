@@ -4,19 +4,47 @@
 
 %---- packages
 
+\RequirePackage[utf8]{inputenc} %--------------- support for UTF-8 characters
+\RequirePackage[T1]{fontenc} %------------------ main fonts for pdfLaTeX
+\RequirePackage{lmodern} %---------------------- better fonts
+\RequirePackage{textcomp} %--------------------- companion fonts
 \RequirePackage{geometry} %--------------------- manipulate page geometry
-\RequirePackage{fontspec} %--------------------- alternative fonts
 \RequirePackage{graphicx} %--------------------- pictures and figures
+\RequirePackage{subcaption} %------------------- better captioning and subfigures
+\RequirePackage{caption} %---------------------- better captions
+\RequirePackage{enumitem} %--------------------- better item in enumerations
+\RequirePackage{float} %------------------------ manage floating objects
+\RequirePackage{xspace} %----------------------- insert correct space
+\RequirePackage{xparse} %----------------------- improved \newcommand
+\RequirePackage[multiple]{footmisc} %----------- better footer
+\RequirePackage{marginnote} %------------------- use margin note in floats
 \RequirePackage{booktabs} %--------------------- nice tables
+\RequirePackage{makecell} %--------------------- custom cells in tabular
 \RequirePackage{multicol} %--------------------- multi-column environment
 \RequirePackage{multirow} %--------------------- multi-row environment
-\RequirePackage{caption} %---------------------- better captions
-\RequirePackage[usenames,dvipsnames]{xcolor} %-- colours
+\RequirePackage{framed} %----------------------- better frames
+\RequirePackage{mdframed} %--------------------- better frames
+\RequirePackage{hyperref} %--------------------- load hyperref
+\RequirePackage[all]{hypcap} %------------------ adjust anchor of captions
+\RequirePackage[usenames,
+                dvipsnames,
+                svgnames,
+                table]{xcolor} %---------------- colours
 \RequirePackage{fancyhdr} %--------------------- fancy layout
+\RequirePackage{authblk} %---------------------- manage multiple authors
+\RequirePackage{setspace} %--------------------- set custom spacing
+\RequirePackage{titlesec} %--------------------- custom title section
+\RequirePackage{changepage} %------------------- change page layout
+\RequirePackage{lastpage} %--------------------- reference to last page
+\RequirePackage{tocloft} %---------------------- modify table of contents
+\RequirePackage[type={CC},
+                modifier={by-nc-nd},
+                version={4.0}]{doclicense} %---- licence
 \RequirePackage[nottoc]{tocbibind} %------------ put bibliography in TOC
-\RequirePackage{titlesec} %--------------------- customise section and part
 \RequirePackage[backend=biber,
+                citestyle=numeric-comp,
                 sorting=none,
+                sortcites=true,
                 style=ieee,
                 maxnames=3]{biblatex} %--------- bibliography backend
 \RequirePackage{bookmark} %--------------------- hyperref and links
@@ -48,9 +76,14 @@
 
 \newlength{\blockskip}
 \setlength\blockskip{1em}
+
 \newlength{\sepwidth}
 \setlength\sepwidth{1pt}
 \setlength\parskip{1em}
+
+%---- table of contents
+
+\setlength\cftbeforesubsecskip{5pt}
 
 %---- metadata
 
@@ -78,24 +111,13 @@
 {%
   pdftitle={\thetitle},
   pdfsubject={Thesis},
-  pdfauthor={\theauthor},
   pdfkeywords={thesis, graduation, doctoral, phd},
-  pdfstartview={FitH},
-  pdfcreator={XeLaTeX},
-  pdfproducer={XeLaTeX},
-  pdflang={en-GB},
-  pdfpagemode={UseOutlines},
-  bookmarksopen={true},
-  bookmarksnumbered={true},
-  hidelinks,
+  breaklinks=true,
   linktocpage,
-  colorlinks={true},
-  linkcolor={blue},
-  urlcolor={blue},
-  filecolor={blue},
-  runcolor={blue},
-  menucolor={blue},
-  citecolor={red}
+  colorlinks=true,
+  urlcolor=blue,
+  linkcolor=blue,
+  citecolor=red
 }
 
 %---- titlepage
@@ -119,7 +141,9 @@
 
   \vfill
 
-  {\Large \bf \thetitle}
+  \begin{center}
+    {\Large \bf \thetitle}
+  \end{center}
 
   \vspace{4\blockskip}
 
@@ -163,10 +187,11 @@
 
 \newcommand{\plaintoc}
 {%
-  \thispagestyle{plain}
+  \pagestyle{plain}
   \renewcommand*{\contentsname}{\Huge Table of Contents}
   \tableofcontents
   \cleardoubleplainpage{}
+  \pagestyle{fancy}
 }
 
 %---- abstract
@@ -176,7 +201,7 @@
   \thispagestyle{plain}
 
   \noindent {\Large \sc Abstract} \\
-  \rule{0.99\textwidth}{\sepwidth}
+  \rule{0.99\linewidth}{\sepwidth}
 }
 {%
   \vfill
@@ -189,11 +214,11 @@
   \thispagestyle{plain}
 
   \noindent {\Large \sc Acknowledgements} \\
-  \rule{0.99\textwidth}{\sepwidth}
+  \rule{0.99\linewidth}{\sepwidth}
 }
 {%
   \vspace{\parskip}
-  \raggedleft\theauthor
+  \theauthor
   \vfill
 }
 
