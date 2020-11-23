@@ -16,7 +16,7 @@
 \RequirePackage{dsfont} %---------------------- improved math set symbols
 \RequirePackage{upgreek} %--------------------- better Greek alphabet
 \RequirePackage{physics} %--------------------- full physics-related commands
-\RequirePackage{siunitx} %--------------------- SI units formatting
+\RequirePackage[binary-units=true]{siunitx} %-- SI units formatting
 \RequirePackage{graphicx} %-------------------- images and figures
 \RequirePackage{ifthen} %---------------------- conditionals
 \RequirePackage[sort&compress,
@@ -50,16 +50,22 @@
 
 \providecommand{\sm}{\textsc{sm}\xspace}
 \providecommand{\eom}{\textsc{e.o.m.}\xspace}
-\providecommand{\cft}{\textsc{CFT}\xspace}
-\providecommand{\qft}{\textsc{QFT}\xspace}
-\providecommand{\qed}{\textsc{QED}\xspace}
-\providecommand{\qcd}{\textsc{QCD}\xspace}
+\providecommand{\cft}{\textsc{cft}\xspace}
+\providecommand{\qft}{\textsc{qft}\xspace}
+\providecommand{\qed}{\textsc{qed}\xspace}
+\providecommand{\qcd}{\textsc{qcd}\xspace}
 \providecommand{\ope}{\textsc{o.p.e.}\xspace}
 \providecommand{\ode}{\textsc{o.d.e.}\xspace}
 \providecommand{\dof}{\textsc{d.o.f.}\xspace}
+\providecommand{\cicy}{\textsc{CICY}\xspace}
 \providecommand{\cy}{\textsc{CY}\xspace}
 \providecommand{\lhs}{\textsc{lhs}\xspace}
 \providecommand{\rhs}{\textsc{rhs}\xspace}
+\providecommand{\mse}{\textsc{mse}\xspace}
+\providecommand{\mae}{\textsc{mae}\xspace}
+\providecommand{\ann}{\textsc{ann}\xspace}
+\providecommand{\nn}{\textsc{nn}\xspace}
+\providecommand{\cnn}{\textsc{cnn}\xspace}
 \providecommand{\ap}{\ensuremath{\alpha'}\xspace}
 \providecommand{\sgn}{\ensuremath{\mathrm{sign}}}
 
@@ -1391,10 +1397,15 @@
 \providecommand{\uffY}{\ensuremath{\underline{\mathfrak{Y}}}\xspace}
 \providecommand{\uffZ}{\ensuremath{\underline{\mathfrak{Z}}}\xspace}
 
+%---- functions
+
+\providecommand{\fid}{\mathrm{id}}
+
 %---- groups
 
 \providecommand{\OO}[1]{\ensuremath{\mathrm{O}(#1)}\xspace}
 \providecommand{\SO}[1]{\ensuremath{\mathrm{SO}(#1)}\xspace}
+\providecommand{\ISO}[1]{\ensuremath{\mathrm{ISO}(#1)}\xspace}
 \providecommand{\U}[1]{\ensuremath{\mathrm{U}(#1)}\xspace}
 \providecommand{\SU}[1]{\ensuremath{\mathrm{SU}(#1)}\xspace}
 \providecommand{\SL}[2]{\ensuremath{\mathrm{SL}_{#1}(#2)}\xspace}

@@ -37,6 +37,8 @@
 \RequirePackage{changepage} %------------------- change page layout
 \RequirePackage{lastpage} %--------------------- reference to last page
 \RequirePackage{tocloft} %---------------------- modify table of contents
+\RequirePackage{tikz} %------------------------- TikZ pictures
+\RequirePackage{pgf} %-------------------------- pgf plots
 \RequirePackage[type={CC},
                 modifier={by-nc-nd},
                 version={4.0}]{doclicense} %---- licence
@@ -199,9 +201,10 @@
 \newenvironment{abstractpage}
 {%
   \thispagestyle{plain}
-
+  \phantomsection
+  \addcontentsline{toc}{section}{Abstract}
   \noindent {\Large \sc Abstract} \\
-  \rule{0.99\linewidth}{\sepwidth}
+  \rule{0.99\linewidth}{\sepwidth} \\[2ex]
 }
 {%
   \vfill
@@ -212,13 +215,14 @@
 \newenvironment{acknowledgmentspage}
 {%
   \thispagestyle{plain}
-
-  \noindent {\Large \sc Acknowledgements} \\
-  \rule{0.99\linewidth}{\sepwidth}
+  \phantomsection
+  \addcontentsline{toc}{section}{Acknowledgements}
+  \noindent{\Large \sc Acknowledgements} \\
+  \rule{0.99\linewidth}{\sepwidth} \\[2ex]
 }
 {%
-  \vspace{\parskip}
-  \theauthor
+  \par
+  \noindent\theauthor
   \vfill
 }
 
@@ -236,6 +240,7 @@
 \newcommand{\outline}[1]
 {%
   \thispagestyle{plain}
+  \phantomsection
   \section*{#1}
   \addcontentsline{toc}{section}{#1}
 }
