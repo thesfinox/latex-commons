@@ -22,7 +22,7 @@
 \RequirePackage{bookmark} %-------------------------- hyperref
 
 \renewcommand{\familydefault}{\sfdefault} %---------- default font w/o graces
-\setsansfont{DejaVu Sans}
+%\setsansfont{DejaVu Sans}
 
 %%%%%%%% STYLE OF THE PAGE
 
@@ -74,6 +74,12 @@
                              \href{https://www.github.com/\@github}
                                   {\@github}
                             } %-------------------------------------------------------------------- link to GitHub
+
+    \newcommand*{\homepage}[1]{\def\@homepage{#1}} %----------------------------------------------- personal homepage
+    \newcommand{\weblink}{\faGlobe~
+                          \href{https://\@homepage}
+                               {\@homepage}
+                         } %----------------------------------------------------------------------- link to personal homepage
 
     \newcommand*{\linkedin}[1]{\def\@linkedin{#1}} %----------------------------------------------- LinkedIn username
     \newcommand{\linkedinlink}{\faLinkedinSquare~
@@ -155,7 +161,7 @@
         \end{cvcontact}
 
         \begin{cvsocial}
-        \foreach \x in {\linkedinlink, \skypelink, \githublink}
+        \foreach \x in {\linkedinlink, \skypelink, \githublink, \weblink}
         {
             \ifthenelse{\isundefined{\x}}{}{\x~}
         }
