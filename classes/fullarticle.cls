@@ -35,10 +35,9 @@
 \RequirePackage{setspace} %--------------------- set custom spacing
 \RequirePackage{titlesec} %--------------------- custom title section
 \RequirePackage{changepage} %------------------- change page layout
-\RequirePackage{lastpage} %--------------------- reference to last page
 \RequirePackage[type={CC},
                 modifier={by-nc-nd},
-                version={4.0}]{doclicense} %- licence
+                version={4.0}]{doclicense} %---- licence
 \RequirePackage[nottoc]{tocbibind} %------------ put bibliography in TOC
 \RequirePackage[backend=biber,
                 citestyle=numeric-comp,
@@ -60,6 +59,7 @@
 
 \pagenumbering{arabic}
 \pagestyle{fancy}
+\fancyhead[L,C]{}
 
 \setlength{\affilsep}{2em}
 \renewcommand{\Authsep}{~,~}
@@ -67,6 +67,8 @@
 \renewcommand{\Authands}{~~and~}
 
 \renewcommand*{\bibfont}{\small}
+
+\captionsetup{format=hang,labelsep=period,font=small,labelfont=bf,textfont=it}
 
 %---- metadata
 
