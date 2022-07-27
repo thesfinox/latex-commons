@@ -4,15 +4,18 @@
 \RequirePackage{xparse} %----------- improved \newcommand
 \RequirePackage{marginnote} %------- use margin note in floats
 \RequirePackage{xcolor} %----------- provide colours
+\RequirePackage{tikz} %------------- drawings (contouring)
+\RequirePackage{xspace} %----------- define spaces
+\RequirePackage{showlabels} %------- show the labels of objects
 
 \ProcessOptions\relax
 
+\providecommand\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
 \newcounter{draftcommentcnt}
-\NewDocumentCommand{\draftcomment}{s O{red} m}{%
-        \def\margnote{\IfBooleanTF{#1}{\marginnote}{\marginpar}}%
+\NewDocumentCommand{\draftcomment}{s O{red} O{} m}{%
         \stepcounter{draftcommentcnt}%
-        \textcolor{#2}{#3}%
-        \margnote{\textcolor{#2}{$\Leftarrow$ \arabic{draftcommentcnt}}}%
+        \textcolor{#2}{\circled{\textsc{#3}\oldstylenums{\arabic{draftcommentcnt}}}}%
+        \ifodd\value{draftcommentcnt}\normalmarginpar\marginnote{{\footnotesize \textcolor{#2}{$\Leftarrow$ \oldstylenums{\arabic{draftcommentcnt}}: #4}}}\else\reversemarginpar\marginnote{{\footnotesize \textcolor{#2}{$\Rightarrow$ \oldstylenums{\arabic{draftcommentcnt}}: #4}}}\fi%
 }
 
 % vim: ft=tex

@@ -1,27 +1,28 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{sciencestuff}[2020/04/08 Science related stuff]
 
-\RequirePackage{amsmath} %--------------------- math mode
-\RequirePackage{amssymb} %--------------------- math symbols
-\RequirePackage{amsfonts} %-------------------- math fonts
-\RequirePackage{bm} %-------------------------- boldsymbols
-\RequirePackage{mathtools} %------------------- mathematical tools
-\RequirePackage{mathrsfs} %-------------------- better cal
-\RequirePackage{slashed} %--------------------- slashed characters
-\RequirePackage{tensor} %---------------------- write tensors
-\RequirePackage{listings} %-------------------- code sections
+\RequirePackage{amsmath} %------------------------------ math mode
+\RequirePackage{amssymb} %------------------------------ math symbols
+\RequirePackage{amsfonts} %----------------------------- math fonts
+\RequirePackage{bm} %----------------------------------- boldsymbols
+\RequirePackage{mathtools} %---------------------------- mathematical tools
+\RequirePackage{mathrsfs} %----------------------------- better cal
+\RequirePackage{slashed} %------------------------------ slashed characters
+\RequirePackage{tensor} %------------------------------- write tensors
+\RequirePackage{listings} %----------------------------- code sections
 \RequirePackage[amsmath,
                 hyperref,
-                framed]{ntheorem} %------------ improved theorem envoronment
-\RequirePackage{dsfont} %---------------------- improved math set symbols
-\RequirePackage{upgreek} %--------------------- better Greek alphabet
-\RequirePackage{physics} %--------------------- full physics-related commands
-\RequirePackage[binary-units=true]{siunitx} %-- SI units formatting
-\RequirePackage{graphicx} %-------------------- images and figures
-\RequirePackage{ifthen} %---------------------- conditionals
+                framed]{ntheorem} %--------------------- improved theorem envoronment
+\RequirePackage{dsfont} %------------------------------- improved math set symbols
+\RequirePackage{upgreek} %------------------------------ better Greek alphabet
+\RequirePackage{physics} %------------------------------ full physics-related commands
+\RequirePackage[print-unity-mantissa=false,
+                print-zero-exponent=false]{siunitx} %--- SI units formatting
+\RequirePackage{graphicx} %----------------------------- images and figures
+\RequirePackage{ifthen} %------------------------------- conditionals
+\RequirePackage[compat=1.1.0]{tikz-feynman} %----------- Feynman diagrams
 \RequirePackage[sort&compress,
-                english]{cleveref} %----------- nicer citations and references
-\RequirePackage[compat=1.1.0]{tikz-feynman} %-- Feynman diagrams
+                english]{cleveref} %-------------------- nicer citations and references
 
 \ProcessOptions\relax
 
@@ -46,28 +47,67 @@
 \numberwithin{figure}{section}
 \numberwithin{table}{section}
 
+\providecommand{\defeq}{\overset{\mathrm{def}}{=\joinrel=}}
+
 %---- abbreviations
 
-\providecommand{\sm}{\textsc{sm}\xspace}
-\providecommand{\eom}{\textsc{e.o.m.}\xspace}
-\providecommand{\cft}{\textsc{cft}\xspace}
-\providecommand{\qft}{\textsc{qft}\xspace}
-\providecommand{\qed}{\textsc{qed}\xspace}
-\providecommand{\qcd}{\textsc{qcd}\xspace}
-\providecommand{\ope}{\textsc{o.p.e.}\xspace}
-\providecommand{\ode}{\textsc{o.d.e.}\xspace}
-\providecommand{\dof}{\textsc{d.o.f.}\xspace}
-\providecommand{\cicy}{\textsc{CICY}\xspace}
-\providecommand{\cy}{\textsc{CY}\xspace}
-\providecommand{\lhs}{\textsc{lhs}\xspace}
-\providecommand{\rhs}{\textsc{rhs}\xspace}
-\providecommand{\mse}{\textsc{mse}\xspace}
-\providecommand{\mae}{\textsc{mae}\xspace}
-\providecommand{\ann}{\textsc{ann}\xspace}
-\providecommand{\nn}{\textsc{nn}\xspace}
-\providecommand{\cnn}{\textsc{cnn}\xspace}
-\providecommand{\ap}{\ensuremath{\alpha'}\xspace}
-\providecommand{\sgn}{\ensuremath{\mathrm{sign}}}
+\providecommand{\ai}{\textsc{ai}\xspace} %-------------------------------------- artificial intelligence
+\providecommand{\ml}{\textsc{ml}\xspace} %-------------------------------------- machine learning
+\providecommand{\dl}{\textsc{dl}\xspace} %-------------------------------------- deep learning
+\providecommand{\sm}{\textsc{sm}\xspace} %-------------------------------------- standard model
+\providecommand{\eom}{\textsc{e.o.m.}\xspace} %--------------------------------- equation(s) of motion
+\providecommand{\cft}{\textsc{cft}\xspace} %------------------------------------ conformal field theory
+\providecommand{\qft}{\textsc{qft}\xspace} %------------------------------------ quantum field theory
+\providecommand{\qed}{\textsc{qed}\xspace} %------------------------------------ quantum electro-dynamics
+\providecommand{\qcd}{\textsc{qcd}\xspace} %------------------------------------ quantum chromo-dynamics
+\providecommand{\ope}{\textsc{o.p.e.}\xspace} %--------------------------------- operator product expansion
+\providecommand{\ode}{\textsc{o.d.e.}\xspace} %--------------------------------- ordinary differential equations
+\providecommand{\dof}{\textsc{d.o.f.}\xspace} %--------------------------------- degrees of freedom
+\providecommand{\cy}{\textsc{CY}\xspace} %-------------------------------------- calabi-yau
+\providecommand{\cicy}{\textsc{CICY}\xspace} %---------------------------------- complete intersection calabi-yau
+\providecommand{\lhs}{\textsc{lhs}\xspace} %------------------------------------ left hand side
+\providecommand{\rhs}{\textsc{rhs}\xspace} %------------------------------------ right hand side
+\providecommand{\sota}{\textsc{sota}\xspace} %---------------------------------- state-of-the-art
+\providecommand{\Var}[1]{\ensuremath{\mathrm{Var}\left( #1 \right)}\xspace} %--- variance
+\providecommand{\Ev}[1]{\ensuremath{\mathbb{E}\left[ #1 \right]}\xspace} %------ expected value
+\providecommand{\bn}{\textsc{bn}\xspace} %-------------------------------------- batch normalisation
+\providecommand{\mse}{\textsc{mse}\xspace} %------------------------------------ mean squared error
+\providecommand{\rmse}{\textsc{rmse}\xspace} %---------------------------------- root mean squared error
+\providecommand{\mae}{\textsc{mae}\xspace} %------------------------------------ mean absolute error
+\providecommand{\mape}{\textsc{mape}\xspace} %---------------------------------- mean absolute percentage error
+\providecommand{\mt}{\textsc{mt}\xspace} %-------------------------------------- multi-task
+\providecommand{\libs}{\textsc{libs}\xspace} %---------------------------------- laser-induced breakdown spectroscopy
+\providecommand{\relu}{\textsc{ReLU}\xspace} %---------------------------------- rectified linear unit
+\providecommand{\ram}{\textsc{ram}\xspace} %------------------------------------ random access memory
+\providecommand{\rom}{\textsc{rom}\xspace} %------------------------------------ read-only memory
+\providecommand{\cpu}{\textsc{cpu}\xspace} %------------------------------------ central processing unit
+\providecommand{\gpu}{\textsc{gpu}\xspace} %------------------------------------ graphics processing unit
+\providecommand{\ddr}{\textsc{ddr}\xspace} %------------------------------------ double data rate
+\providecommand{\gddr}{\textsc{gddr}\xspace} %---------------------------------- graphics double data rate
+\providecommand{\hbm}[1][]{\textsc{hbm}\oldstylenums{#1}\xspace} %-------------- high bandwidth memory
+\providecommand{\ap}{\ensuremath{\alpha'}\xspace} %----------------------------- string constant
+\providecommand{\sgn}{\ensuremath{\mathrm{sign}}\xspace} %---------------------- sign function
+\providecommand{\rs}{\ensuremath{\mathrm{R}^2}\xspace} %------------------------ r-squared
+
+%---- algorithms
+
+\providecommand{\lr}{\textsc{lr}\xspace} %--------------------------- linear regression
+\providecommand{\mlr}{\textsc{mlr}\xspace} %------------------------- multi-linear regression
+\providecommand{\pca}{\textsc{pca}\xspace} %------------------------- principal components analysis
+\providecommand{\pcr}{\textsc{pcr}\xspace} %------------------------- principal components regression
+\providecommand{\pls}[1][]{\textsc{pls}\oldstylenums{#1}\xspace} %--- partial least squares
+\providecommand{\ann}{\textsc{ann}\xspace} %------------------------- artificial neural network
+\providecommand{\anns}{\textsc{ann}s\xspace} %----------------------- artificial neural networks
+\providecommand{\nn}{\textsc{nn}\xspace} %--------------------------- neural network
+\providecommand{\nns}{\textsc{nn}s\xspace} %------------------------- neural networks
+\providecommand{\dnn}{\textsc{dnn}\xspace} %--------------------------- neural network
+\providecommand{\dnns}{\textsc{dnn}s\xspace} %------------------------- neural networks
+\providecommand{\cnn}{\textsc{cnn}\xspace} %------------------------- convolutional neural network
+\providecommand{\cnns}{\textsc{cnn}s\xspace} %----------------------- convolutional neural networks
+\providecommand{\fcnn}{\textsc{fcnn}\xspace} %----------------------- fully connected neural network
+\providecommand{\fcnns}{\textsc{fcnn}s\xspace} %--------------------- fully connected neural networks
+\providecommand{\adam}{\textsc{Adam}\xspace} %----------------------- adam
+\providecommand{\adamw}{\textsc{AdamW}\xspace} %--------------------- adamw
 
 %---- remap greek letters
 
@@ -110,6 +150,46 @@
 \renewcommand{\Phi}{\ensuremath{\Upphi}\xspace}
 \renewcommand{\Psi}{\ensuremath{\Uppsi}\xspace}
 \renewcommand{\Omega}{\ensuremath{\Upomega}\xspace}
+
+\providecommand{\bfalpha}{\ensuremath{\mathbf{\upalpha}}\xspace}
+\providecommand{\bfbeta}{\ensuremath{\mathbf{\upbeta}}\xspace}
+\providecommand{\bfgamma}{\ensuremath{\mathbf{\upgamma}}\xspace}
+\providecommand{\bfdelta}{\ensuremath{\mathbf{\updelta}}\xspace}
+\providecommand{\bfepsilon}{\ensuremath{\mathbf{\upepsilon}}\xspace}
+\providecommand{\bfzeta}{\ensuremath{\mathbf{\upzeta}}\xspace}
+\providecommand{\bfeta}{\ensuremath{\mathbf{\upeta}}\xspace}
+\providecommand{\bftheta}{\ensuremath{\mathbf{\uptheta}}\xspace}
+\providecommand{\bfiota}{\ensuremath{\mathbf{\upiota}}\xspace}
+\providecommand{\bfkappa}{\ensuremath{\mathbf{\upkappa}}\xspace}
+\providecommand{\bflambda}{\ensuremath{\mathbf{\uplambda}}\xspace}
+\providecommand{\bfmu}{\ensuremath{\mathbf{\upmu}}\xspace}
+\providecommand{\bfnu}{\ensuremath{\mathbf{\upnu}}\xspace}
+\providecommand{\bfxi}{\ensuremath{\mathbf{\upxi}}\xspace}
+\providecommand{\bfpi}{\ensuremath{\mathbf{\uppi}}\xspace}
+\providecommand{\bfrho}{\ensuremath{\mathbf{\uprho}}\xspace}
+\providecommand{\bfsigma}{\ensuremath{\mathbf{\upsigma}}\xspace}
+\providecommand{\bftau}{\ensuremath{\mathbf{\uptau}}\xspace}
+\providecommand{\bfupsilon}{\ensuremath{\mathbf{\upupsilon}}\xspace}
+\providecommand{\bfphi}{\ensuremath{\mathbf{\upphi}}\xspace}
+\providecommand{\bfchi}{\ensuremath{\mathbf{\upchi}}\xspace}
+\providecommand{\bfpsi}{\ensuremath{\mathbf{\uppsi}}\xspace}
+\providecommand{\bfomega}{\ensuremath{\mathbf{\upomega}}\xspace}
+\providecommand{\bfvarepsilon}{\ensuremath{\mathbf{\upvarepsilon}}\xspace}
+\providecommand{\bfvartheta}{\ensuremath{\mathbf{\upvartheta}}\xspace}
+\providecommand{\bfvarpi}{\ensuremath{\mathbf{\upvarpi}}\xspace}
+\providecommand{\bfvarphi}{\ensuremath{\mathbf{\upvarphi}}\xspace}
+\providecommand{\bfvarsigma}{\ensuremath{\mathbf{\upvarsigma}}\xspace}
+\providecommand{\bfGamma}{\ensuremath{\mathbf{\Upgamma}}\xspace}
+\providecommand{\bfDelta}{\ensuremath{\mathbf{\Updelta}}\xspace}
+\providecommand{\bfTheta}{\ensuremath{\mathbf{\Uptheta}}\xspace}
+\providecommand{\bfLambda}{\ensuremath{\mathbf{\Uplambda}}\xspace}
+\providecommand{\bfXi}{\ensuremath{\mathbf{\Upxi}}\xspace}
+\providecommand{\bfPi}{\ensuremath{\mathbf{\Uppi}}\xspace}
+\providecommand{\bfSigma}{\ensuremath{\mathbf{\Upsigma}}\xspace}
+\providecommand{\bfUpsilon}{\ensuremath{\mathbf{\Upupsilon}}\xspace}
+\providecommand{\bfPhi}{\ensuremath{\mathbf{\Upphi}}\xspace}
+\providecommand{\bfPsi}{\ensuremath{\mathbf{\Uppsi}}\xspace}
+\providecommand{\bfOmega}{\ensuremath{\mathbf{\Upomega}}\xspace}
 
 \providecommand{\dalpha}{\ensuremath{\dot{\upalpha}}\xspace}
 \providecommand{\dbeta}{\ensuremath{\dot{\upbeta}}\xspace}
@@ -427,6 +507,59 @@
 \providecommand{\barX}{\ensuremath{\overline{X}}\xspace}
 \providecommand{\barY}{\ensuremath{\overline{Y}}\xspace}
 \providecommand{\barZ}{\ensuremath{\overline{Z}}\xspace}
+
+\providecommand{\barbfa}{\ensuremath{\overline{\mathbf{a}}}\xspace}
+\providecommand{\barbfb}{\ensuremath{\overline{\mathbf{b}}}\xspace}
+\providecommand{\barbfc}{\ensuremath{\overline{\mathbf{c}}}\xspace}
+\providecommand{\barbfd}{\ensuremath{\overline{\mathbf{d}}}\xspace}
+\providecommand{\barbfe}{\ensuremath{\overline{\mathbf{e}}}\xspace}
+\providecommand{\barbff}{\ensuremath{\overline{\mathbf{f}}}\xspace}
+\providecommand{\barbfg}{\ensuremath{\overline{\mathbf{g}}}\xspace}
+\providecommand{\barbfh}{\ensuremath{\overline{\mathbf{h}}}\xspace}
+\providecommand{\barbfi}{\ensuremath{\overline{\mathbf{i}}}\xspace}
+\providecommand{\barbfj}{\ensuremath{\overline{\mathbf{j}}}\xspace}
+\providecommand{\barbfk}{\ensuremath{\overline{\mathbf{k}}}\xspace}
+\providecommand{\barbfl}{\ensuremath{\overline{\mathbf{l}}}\xspace}
+\providecommand{\barbfm}{\ensuremath{\overline{\mathbf{m}}}\xspace}
+\providecommand{\barbfn}{\ensuremath{\overline{\mathbf{n}}}\xspace}
+\providecommand{\barbfo}{\ensuremath{\overline{\mathbf{o}}}\xspace}
+\providecommand{\barbfp}{\ensuremath{\overline{\mathbf{p}}}\xspace}
+\providecommand{\barbfq}{\ensuremath{\overline{\mathbf{q}}}\xspace}
+\providecommand{\barbfr}{\ensuremath{\overline{\mathbf{r}}}\xspace}
+\providecommand{\barbfs}{\ensuremath{\overline{\mathbf{s}}}\xspace}
+\providecommand{\barbft}{\ensuremath{\overline{\mathbf{t}}}\xspace}
+\providecommand{\barbfu}{\ensuremath{\overline{\mathbf{u}}}\xspace}
+\providecommand{\barbfv}{\ensuremath{\overline{\mathbf{v}}}\xspace}
+\providecommand{\barbfw}{\ensuremath{\overline{\mathbf{w}}}\xspace}
+\providecommand{\barbfx}{\ensuremath{\overline{\mathbf{x}}}\xspace}
+\providecommand{\barbfy}{\ensuremath{\overline{\mathbf{y}}}\xspace}
+\providecommand{\barbfz}{\ensuremath{\overline{\mathbf{z}}}\xspace}
+\providecommand{\barbfA}{\ensuremath{\overline{\mathbf{A}}}\xspace}
+\providecommand{\barbfB}{\ensuremath{\overline{\mathbf{B}}}\xspace}
+\providecommand{\barbfC}{\ensuremath{\overline{\mathbf{C}}}\xspace}
+\providecommand{\barbfD}{\ensuremath{\overline{\mathbf{D}}}\xspace}
+\providecommand{\barbfE}{\ensuremath{\overline{\mathbf{E}}}\xspace}
+\providecommand{\barbfF}{\ensuremath{\overline{\mathbf{F}}}\xspace}
+\providecommand{\barbfG}{\ensuremath{\overline{\mathbf{G}}}\xspace}
+\providecommand{\barbfH}{\ensuremath{\overline{\mathbf{H}}}\xspace}
+\providecommand{\barbfI}{\ensuremath{\overline{\mathbf{I}}}\xspace}
+\providecommand{\barbfJ}{\ensuremath{\overline{\mathbf{J}}}\xspace}
+\providecommand{\barbfK}{\ensuremath{\overline{\mathbf{K}}}\xspace}
+\providecommand{\barbfL}{\ensuremath{\overline{\mathbf{L}}}\xspace}
+\providecommand{\barbfM}{\ensuremath{\overline{\mathbf{M}}}\xspace}
+\providecommand{\barbfN}{\ensuremath{\overline{\mathbf{N}}}\xspace}
+\providecommand{\barbfO}{\ensuremath{\overline{\mathbf{O}}}\xspace}
+\providecommand{\barbfP}{\ensuremath{\overline{\mathbf{P}}}\xspace}
+\providecommand{\barbfQ}{\ensuremath{\overline{\mathbf{Q}}}\xspace}
+\providecommand{\barbfR}{\ensuremath{\overline{\mathbf{R}}}\xspace}
+\providecommand{\barbfS}{\ensuremath{\overline{\mathbf{S}}}\xspace}
+\providecommand{\barbfT}{\ensuremath{\overline{\mathbf{T}}}\xspace}
+\providecommand{\barbfU}{\ensuremath{\overline{\mathbf{U}}}\xspace}
+\providecommand{\barbfV}{\ensuremath{\overline{\mathbf{V}}}\xspace}
+\providecommand{\barbfW}{\ensuremath{\overline{\mathbf{W}}}\xspace}
+\providecommand{\barbfX}{\ensuremath{\overline{\mathbf{X}}}\xspace}
+\providecommand{\barbfY}{\ensuremath{\overline{\mathbf{Y}}}\xspace}
+\providecommand{\barbfZ}{\ensuremath{\overline{\mathbf{Z}}}\xspace}
 
 \providecommand{\tildea}{\ensuremath{\widetilde{a}}\xspace}
 \providecommand{\tildeb}{\ensuremath{\widetilde{b}}\xspace}
@@ -750,6 +883,112 @@
 \providecommand{\tccX}{\ensuremath{\widetilde{\mathscr{X}}}\xspace}
 \providecommand{\tccY}{\ensuremath{\widetilde{\mathscr{Y}}}\xspace}
 \providecommand{\tccZ}{\ensuremath{\widetilde{\mathscr{Z}}}\xspace}
+
+\providecommand{\bfa}{\ensuremath{\mathbf{a}}\xspace}
+\providecommand{\bfb}{\ensuremath{\mathbf{b}}\xspace}
+\providecommand{\bfc}{\ensuremath{\mathbf{c}}\xspace}
+\providecommand{\bfd}{\ensuremath{\mathbf{d}}\xspace}
+\providecommand{\bfe}{\ensuremath{\mathbf{e}}\xspace}
+\providecommand{\bff}{\ensuremath{\mathbf{f}}\xspace}
+\providecommand{\bfg}{\ensuremath{\mathbf{g}}\xspace}
+\providecommand{\bfh}{\ensuremath{\mathbf{h}}\xspace}
+\providecommand{\bfi}{\ensuremath{\mathbf{i}}\xspace}
+\providecommand{\bfj}{\ensuremath{\mathbf{j}}\xspace}
+\providecommand{\bfk}{\ensuremath{\mathbf{k}}\xspace}
+\providecommand{\bfl}{\ensuremath{\mathbf{l}}\xspace}
+\providecommand{\bfm}{\ensuremath{\mathbf{m}}\xspace}
+\providecommand{\bfn}{\ensuremath{\mathbf{n}}\xspace}
+\providecommand{\bfo}{\ensuremath{\mathbf{o}}\xspace}
+\providecommand{\bfp}{\ensuremath{\mathbf{p}}\xspace}
+\providecommand{\bfq}{\ensuremath{\mathbf{q}}\xspace}
+\providecommand{\bfr}{\ensuremath{\mathbf{r}}\xspace}
+\providecommand{\bfs}{\ensuremath{\mathbf{s}}\xspace}
+\providecommand{\bft}{\ensuremath{\mathbf{t}}\xspace}
+\providecommand{\bfu}{\ensuremath{\mathbf{u}}\xspace}
+\providecommand{\bfv}{\ensuremath{\mathbf{v}}\xspace}
+\providecommand{\bfw}{\ensuremath{\mathbf{w}}\xspace}
+\providecommand{\bfx}{\ensuremath{\mathbf{x}}\xspace}
+\providecommand{\bfy}{\ensuremath{\mathbf{y}}\xspace}
+\providecommand{\bfz}{\ensuremath{\mathbf{z}}\xspace}
+\providecommand{\bfA}{\ensuremath{\mathbf{A}}\xspace}
+\providecommand{\bfB}{\ensuremath{\mathbf{B}}\xspace}
+\providecommand{\bfC}{\ensuremath{\mathbf{C}}\xspace}
+\providecommand{\bfD}{\ensuremath{\mathbf{D}}\xspace}
+\providecommand{\bfE}{\ensuremath{\mathbf{E}}\xspace}
+\providecommand{\bfF}{\ensuremath{\mathbf{F}}\xspace}
+\providecommand{\bfG}{\ensuremath{\mathbf{G}}\xspace}
+\providecommand{\bfH}{\ensuremath{\mathbf{H}}\xspace}
+\providecommand{\bfI}{\ensuremath{\mathbf{I}}\xspace}
+\providecommand{\bfJ}{\ensuremath{\mathbf{J}}\xspace}
+\providecommand{\bfK}{\ensuremath{\mathbf{K}}\xspace}
+\providecommand{\bfL}{\ensuremath{\mathbf{L}}\xspace}
+\providecommand{\bfM}{\ensuremath{\mathbf{M}}\xspace}
+\providecommand{\bfN}{\ensuremath{\mathbf{N}}\xspace}
+\providecommand{\bfO}{\ensuremath{\mathbf{O}}\xspace}
+\providecommand{\bfP}{\ensuremath{\mathbf{P}}\xspace}
+\providecommand{\bfQ}{\ensuremath{\mathbf{Q}}\xspace}
+\providecommand{\bfR}{\ensuremath{\mathbf{R}}\xspace}
+\providecommand{\bfS}{\ensuremath{\mathbf{S}}\xspace}
+\providecommand{\bfT}{\ensuremath{\mathbf{T}}\xspace}
+\providecommand{\bfU}{\ensuremath{\mathbf{U}}\xspace}
+\providecommand{\bfV}{\ensuremath{\mathbf{V}}\xspace}
+\providecommand{\bfW}{\ensuremath{\mathbf{W}}\xspace}
+\providecommand{\bfX}{\ensuremath{\mathbf{X}}\xspace}
+\providecommand{\bfY}{\ensuremath{\mathbf{Y}}\xspace}
+\providecommand{\bfZ}{\ensuremath{\mathbf{Z}}\xspace}
+
+\providecommand{\hbfa}{\ensuremath{\widehat{\mathbf{a}}}\xspace}
+\providecommand{\hbfb}{\ensuremath{\widehat{\mathbf{b}}}\xspace}
+\providecommand{\hbfc}{\ensuremath{\widehat{\mathbf{c}}}\xspace}
+\providecommand{\hbfd}{\ensuremath{\widehat{\mathbf{d}}}\xspace}
+\providecommand{\hbfe}{\ensuremath{\widehat{\mathbf{e}}}\xspace}
+\providecommand{\hbff}{\ensuremath{\widehat{\mathbf{f}}}\xspace}
+\providecommand{\hbfg}{\ensuremath{\widehat{\mathbf{g}}}\xspace}
+\providecommand{\hbfh}{\ensuremath{\widehat{\mathbf{h}}}\xspace}
+\providecommand{\hbfi}{\ensuremath{\widehat{\mathbf{i}}}\xspace}
+\providecommand{\hbfj}{\ensuremath{\widehat{\mathbf{j}}}\xspace}
+\providecommand{\hbfk}{\ensuremath{\widehat{\mathbf{k}}}\xspace}
+\providecommand{\hbfl}{\ensuremath{\widehat{\mathbf{l}}}\xspace}
+\providecommand{\hbfm}{\ensuremath{\widehat{\mathbf{m}}}\xspace}
+\providecommand{\hbfn}{\ensuremath{\widehat{\mathbf{n}}}\xspace}
+\providecommand{\hbfo}{\ensuremath{\widehat{\mathbf{o}}}\xspace}
+\providecommand{\hbfp}{\ensuremath{\widehat{\mathbf{p}}}\xspace}
+\providecommand{\hbfq}{\ensuremath{\widehat{\mathbf{q}}}\xspace}
+\providecommand{\hbfr}{\ensuremath{\widehat{\mathbf{r}}}\xspace}
+\providecommand{\hbfs}{\ensuremath{\widehat{\mathbf{s}}}\xspace}
+\providecommand{\hbft}{\ensuremath{\widehat{\mathbf{t}}}\xspace}
+\providecommand{\hbfu}{\ensuremath{\widehat{\mathbf{u}}}\xspace}
+\providecommand{\hbfv}{\ensuremath{\widehat{\mathbf{v}}}\xspace}
+\providecommand{\hbfw}{\ensuremath{\widehat{\mathbf{w}}}\xspace}
+\providecommand{\hbfx}{\ensuremath{\widehat{\mathbf{x}}}\xspace}
+\providecommand{\hbfy}{\ensuremath{\widehat{\mathbf{y}}}\xspace}
+\providecommand{\hbfz}{\ensuremath{\widehat{\mathbf{z}}}\xspace}
+\providecommand{\hbfA}{\ensuremath{\widehat{\mathbf{A}}}\xspace}
+\providecommand{\hbfB}{\ensuremath{\widehat{\mathbf{B}}}\xspace}
+\providecommand{\hbfC}{\ensuremath{\widehat{\mathbf{C}}}\xspace}
+\providecommand{\hbfD}{\ensuremath{\widehat{\mathbf{D}}}\xspace}
+\providecommand{\hbfE}{\ensuremath{\widehat{\mathbf{E}}}\xspace}
+\providecommand{\hbfF}{\ensuremath{\widehat{\mathbf{F}}}\xspace}
+\providecommand{\hbfG}{\ensuremath{\widehat{\mathbf{G}}}\xspace}
+\providecommand{\hbfH}{\ensuremath{\widehat{\mathbf{H}}}\xspace}
+\providecommand{\hbfI}{\ensuremath{\widehat{\mathbf{I}}}\xspace}
+\providecommand{\hbfJ}{\ensuremath{\widehat{\mathbf{J}}}\xspace}
+\providecommand{\hbfK}{\ensuremath{\widehat{\mathbf{K}}}\xspace}
+\providecommand{\hbfL}{\ensuremath{\widehat{\mathbf{L}}}\xspace}
+\providecommand{\hbfM}{\ensuremath{\widehat{\mathbf{M}}}\xspace}
+\providecommand{\hbfN}{\ensuremath{\widehat{\mathbf{N}}}\xspace}
+\providecommand{\hbfO}{\ensuremath{\widehat{\mathbf{O}}}\xspace}
+\providecommand{\hbfP}{\ensuremath{\widehat{\mathbf{P}}}\xspace}
+\providecommand{\hbfQ}{\ensuremath{\widehat{\mathbf{Q}}}\xspace}
+\providecommand{\hbfR}{\ensuremath{\widehat{\mathbf{R}}}\xspace}
+\providecommand{\hbfS}{\ensuremath{\widehat{\mathbf{S}}}\xspace}
+\providecommand{\hbfT}{\ensuremath{\widehat{\mathbf{T}}}\xspace}
+\providecommand{\hbfU}{\ensuremath{\widehat{\mathbf{U}}}\xspace}
+\providecommand{\hbfV}{\ensuremath{\widehat{\mathbf{V}}}\xspace}
+\providecommand{\hbfW}{\ensuremath{\widehat{\mathbf{W}}}\xspace}
+\providecommand{\hbfX}{\ensuremath{\widehat{\mathbf{X}}}\xspace}
+\providecommand{\hbfY}{\ensuremath{\widehat{\mathbf{Y}}}\xspace}
+\providecommand{\hbfZ}{\ensuremath{\widehat{\mathbf{Z}}}\xspace}
 
 \providecommand{\hcA}{\ensuremath{\widehat{\mathcal{A}}}\xspace}
 \providecommand{\hcB}{\ensuremath{\widehat{\mathcal{B}}}\xspace}
