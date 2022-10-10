@@ -6,7 +6,7 @@
 
 %%%%%%%% PACKAGES
 
-\RequirePackage[margin=1.5cm]{geometry} %------------ change aspect
+\RequirePackage[margin=1.25cm]{geometry} %------------ change aspect
 \RequirePackage{graphicx} %-------------------------- figures and images
 \RequirePackage{fontspec} %-------------------------- fonts in XeLaTex
 \RequirePackage{enumitem} %-------------------------- control spacing of lists
@@ -22,7 +22,7 @@
 \RequirePackage{bookmark} %-------------------------- hyperref
 
 \renewcommand{\familydefault}{\sfdefault} %---------- default font w/o graces
-%\setsansfont{DejaVu Sans}
+\setsansfont{DejaVu Sans}
 
 %%%%%%%% STYLE OF THE PAGE
 
@@ -75,12 +75,6 @@
                                   {\@github}
                             } %-------------------------------------------------------------------- link to GitHub
 
-    \newcommand*{\homepage}[1]{\def\@homepage{#1}} %----------------------------------------------- personal homepage
-    \newcommand{\weblink}{\faGlobe~
-                          \href{https://\@homepage}
-                               {\@homepage}
-                         } %----------------------------------------------------------------------- link to personal homepage
-
     \newcommand*{\linkedin}[1]{\def\@linkedin{#1}} %----------------------------------------------- LinkedIn username
     \newcommand{\linkedinlink}{\faLinkedinSquare~
                                \href{https://www.linkedin.com/in/\@linkedin}
@@ -96,6 +90,10 @@
     \newcommand{\emaillink}{\faAt~
                             \href{mailto:\@email}{\@email}
                            } %--------------------------------------------------------------------- link to mail
+    \newcommand*{\homepage}[1]{\def\@homepage{#1}} %---------------------------------------------- homepage info
+    \newcommand{\homepagelink}{\faUser~
+                               \href{https://\@homepage}{\@homepage}
+                              } %------------------------------------------------------------------ link to homepage
 
     \hypersetup %---------------------------------------------------------------------------------- update metadata
     {%
@@ -161,7 +159,7 @@
         \end{cvcontact}
 
         \begin{cvsocial}
-        \foreach \x in {\linkedinlink, \skypelink, \githublink, \weblink}
+        \foreach \x in {\linkedinlink, \skypelink, \githublink, \homepagelink}
         {
             \ifthenelse{\isundefined{\x}}{}{\x~}
         }
