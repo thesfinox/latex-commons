@@ -91,6 +91,12 @@
                             \href{mailto:\@email}{\@email}
                            } %--------------------------------------------------------------------- link to mail
 
+    \newcommand*{\homepage}[1]{\def\@homepage{#1}} %----------------------------------------------- homepage
+    \newcommand{\homepagelink}{\faHome~
+                             \href{https://\@homepage}
+                                  {\@homepage}
+                            } %-------------------------------------------------------------------- link to homepage
+
     \hypersetup %---------------------------------------------------------------------------------- update metadata
     {%
         pdftitle={\@title},
@@ -155,7 +161,7 @@
         \end{cvcontact}
 
         \begin{cvsocial}
-        \foreach \x in {\linkedinlink, \skypelink, \githublink}
+        \foreach \x in {\linkedinlink, \skypelink, \githublink, \homepagelink}
         {
             \ifthenelse{\isundefined{\x}}{}{\x~}
         }
