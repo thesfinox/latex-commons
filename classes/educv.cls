@@ -95,6 +95,12 @@
                                \href{https://\@homepage}{\@homepage}
                               } %------------------------------------------------------------------ link to homepage
 
+    \newcommand*{\homepage}[1]{\def\@homepage{#1}} %----------------------------------------------- homepage
+    \newcommand{\homepagelink}{\faHome~
+                             \href{https://\@homepage}
+                                  {\@homepage}
+                            } %-------------------------------------------------------------------- link to homepage
+
     \hypersetup %---------------------------------------------------------------------------------- update metadata
     {%
         pdftitle={\@title},
