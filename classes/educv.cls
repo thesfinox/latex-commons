@@ -90,10 +90,6 @@
     \newcommand{\emaillink}{\faAt~
                             \href{mailto:\@email}{\@email}
                            } %--------------------------------------------------------------------- link to mail
-    \newcommand*{\homepage}[1]{\def\@homepage{#1}} %---------------------------------------------- homepage info
-    \newcommand{\homepagelink}{\faUser~
-                               \href{https://\@homepage}{\@homepage}
-                              } %------------------------------------------------------------------ link to homepage
 
     \newcommand*{\homepage}[1]{\def\@homepage{#1}} %----------------------------------------------- homepage
     \newcommand{\homepagelink}{\faHome~
