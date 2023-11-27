@@ -1,0 +1,59 @@
+\ProvidesFile{arxiv.def}
+
+\AtEveryCitekey{\clearfield{eprintclass}}
+
+\renewbibmacro{in:}{%
+    \ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}%
+}
+
+\renewbibmacro*{issue+date}{%
+	\iffieldundef{year}{}{%
+	\printtext[parens]{%
+	\iffieldundef{issue}{%
+		\usebibmacro{date}%
+	}{%
+		\printfield{issue}%
+		\setunit*{\addspace}%
+		\usebibmacro{date}}}%
+	}%
+	\newunit%
+}
+
+\DeclareFieldFormat{url}{%
+	% \newline
+	\mkbibacro{Url}\addcolon\addnbspace%
+	\url{#1}%
+}
+
+\DeclareFieldFormat{doi}{%
+	% \newline
+	\mkbibacro{Doi}\addcolon\addnbspace%
+	\ifhyperref{%
+		\href{http://dx.doi.org/#1}{\nolinkurl{#1}}%
+	}{%
+		\nolinkurl{#1}%
+	}%
+}
+
+\makeatletter
+\DeclareFieldFormat{eprint:arxiv}{%
+	% \newline
+	arXiv\addcolon\addnbspace%
+	\ifhyperref{%
+		\href{http://arxiv.org/\abx@arxivpath/#1}{%
+			\nolinkurl{#1}%
+			% \iffieldundef{eprintclass}{}{%
+			% 	\addspace\texttt{\mkbibbrackets{\thefield{eprintclass}}}%
+			% }%
+		}%
+	}{%
+		\nolinkurl{#1}
+		% \iffieldundef{eprintclass}{}{%
+		% 	\addspace\texttt{\mkbibbrackets{\thefield{eprintclass}}}%
+		% }%
+	}%
+}
+\makeatother
+
+% remove conflicting initials
+% https://tex.stackexchange.com/questions/297489/how-to-abbreviate-first-names-with-multiple-letters-using-biblatex/297490#297490
