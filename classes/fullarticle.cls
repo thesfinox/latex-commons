@@ -35,9 +35,9 @@
 \RequirePackage{setspace} %--------------------- set custom spacing
 \RequirePackage{titlesec} %--------------------- custom title section
 \RequirePackage{changepage} %------------------- change page layout
-\RequirePackage[type={CC},
-                modifier={by-nc-nd},
-                version={4.0}]{doclicense} %---- licence
+%\RequirePackage[type={CC},
+%                modifier={by-nc-nd},
+%                version={4.0}]{doclicense} %---- licence
 \RequirePackage[nottoc]{tocbibind} %------------ put bibliography in TOC
 \RequirePackage[backend=biber,
                 citestyle=numeric-comp,
@@ -66,9 +66,23 @@
 \renewcommand{\Authand}{~~and~}
 \renewcommand{\Authands}{~~and~}
 
-\renewcommand*{\bibfont}{\small}
+\renewcommand*{\bibfont}{\footnotesize}
 
 \captionsetup{format=hang,labelsep=period,font=small,labelfont=bf,textfont=it}
+
+\providecommand{\highlights}[1]{%
+\noindent\begin{tabular}{@{}p{0.125\linewidth}p{0.825\linewidth}@{}}
+    \textbf{highlights:~} & #1 
+\end{tabular}
+\par
+}
+
+\providecommand{\keywords}[1]{%
+\noindent\begin{tabular}{@{}p{0.125\linewidth}p{0.825\linewidth}@{}}
+    \textbf{keywords:~} & #1 
+\end{tabular}
+\par
+}
 
 %---- metadata
 
