@@ -4,42 +4,48 @@
 \RequirePackage{amsmath} %------------------------------ math mode
 \RequirePackage{amssymb} %------------------------------ math symbols
 \RequirePackage{amsfonts} %----------------------------- math fonts
+\RequirePackage[version=4]{mhchem} %-------------------- chemical fomulae
 \RequirePackage{bm} %----------------------------------- boldsymbols
 \RequirePackage{mathtools} %---------------------------- mathematical tools
 \RequirePackage{mathrsfs} %----------------------------- better cal
-\RequirePackage{slashed} %------------------------------ slashed characters
-\RequirePackage{tensor} %------------------------------- write tensors
-\RequirePackage{listings} %----------------------------- code sections
-\RequirePackage[amsmath,
-                hyperref,
-                framed]{ntheorem} %--------------------- improved theorem envoronment
+%\RequirePackage{slashed} %------------------------------ slashed characters
+%\RequirePackage{tensor} %------------------------------- write tensors
+%\RequirePackage{listings} %----------------------------- code sections
+%\RequirePackage[amsmath,
+%                hyperref,
+%                framed]{ntheorem} %--------------------- improved theorem envoronment
 \RequirePackage{dsfont} %------------------------------- improved math set symbols
 \RequirePackage{upgreek} %------------------------------ better Greek alphabet
 \RequirePackage{physics} %------------------------------ full physics-related commands
-\RequirePackage[print-unity-mantissa=false,
-                print-zero-exponent=false]{siunitx} %--- SI units formatting
+\RequirePackage[retain-unity-mantissa=false,
+                retain-zero-exponent=false,
+                binary-units]{siunitx} %---------------- SI units formatting
 \RequirePackage{graphicx} %----------------------------- images and figures
-\RequirePackage{ifthen} %------------------------------- conditionals
-\RequirePackage[compat=1.1.0]{tikz-feynman} %----------- Feynman diagrams
+%\RequirePackage{ifthen} %------------------------------- conditionals
+%\RequirePackage[compat=1.1.0]{tikz-feynman} %----------- Feynman diagrams
 \RequirePackage[sort&compress,
                 english]{cleveref} %-------------------- nicer citations and references
 
 \ProcessOptions\relax
 
 %---- prepare packages
-\tikzfeynmanset{/tikzfeynman/warn luatex=false}
+%\tikzfeynmanset{/tikzfeynman/warn luatex=false}
 
-\lstset{%
-    language=Python,
-    tabsize=4,
-    morecomment=[l]{\#},
-    basicstyle=\ttfamily\small,
-    showstringspaces=false,
-    captionpos=b,
-    breaklines=true
-}
-\lstset{escapeinside={(*@}{@*)}}
-\lstdefinestyle{boxed}{frame=single, numbers=left}
+%\lstset{%
+%    language=Python,
+%    tabsize=4,
+%    morecomment=[l]{\#},
+%    basicstyle=\ttfamily\small,
+%    showstringspaces=false,
+%    captionpos=b,
+%    breaklines=true
+%}
+%\lstset{escapeinside={(*@}{@*)}}
+%\lstdefinestyle{boxed}{frame=single, numbers=left}
+
+%---- remove p. or pp. from bibliography (enable article-numbering to be modified to pages)
+
+\DeclareFieldFormat{pages}{#1}
 
 %---- numbering (number equations, figures and tables within section)
 
@@ -48,6 +54,11 @@
 \numberwithin{table}{section}
 
 \providecommand{\defeq}{\overset{\mathrm{def}}{=\joinrel=}}
+
+%---- units
+
+\AtBeginDocument{\DeclareSIUnit[quantity-product = \,]{\kWh}{kWh}}
+\AtBeginDocument{\DeclareSIUnit[quantity-product = \,]{\carb}{g\ce{CO2}eq}}
 
 %---- abbreviations
 
@@ -77,14 +88,17 @@
 \providecommand{\mape}{\textsc{mape}\xspace} %---------------------------------- mean absolute percentage error
 \providecommand{\mt}{\textsc{mt}\xspace} %-------------------------------------- multi-task
 \providecommand{\libs}{\textsc{libs}\xspace} %---------------------------------- laser-induced breakdown spectroscopy
+\providecommand{\nir}{\textsc{nir}\xspace} %------------------------------------ near-infrared spectroscopy
 \providecommand{\relu}{\textsc{ReLU}\xspace} %---------------------------------- rectified linear unit
 \providecommand{\ram}{\textsc{ram}\xspace} %------------------------------------ random access memory
 \providecommand{\rom}{\textsc{rom}\xspace} %------------------------------------ read-only memory
 \providecommand{\cpu}{\textsc{cpu}\xspace} %------------------------------------ central processing unit
+\providecommand{\cpus}{\textsc{cpu}s\xspace} %---------------------------------- central processing units
 \providecommand{\gpu}{\textsc{gpu}\xspace} %------------------------------------ graphics processing unit
-\providecommand{\ddr}{\textsc{ddr}\xspace} %------------------------------------ double data rate
-\providecommand{\gddr}{\textsc{gddr}\xspace} %---------------------------------- graphics double data rate
-\providecommand{\hbm}[1][]{\textsc{hbm}\oldstylenums{#1}\xspace} %-------------- high bandwidth memory
+\providecommand{\gpus}{\textsc{gpu}s\xspace} %---------------------------------- graphics processing units
+\providecommand{\ddr}[1]{\textsc{ddr#1}\xspace} %------------------------------- double data rate
+\providecommand{\gddr}[1]{\textsc{gddr#1}\xspace} %----------------------------- graphics double data rate
+\providecommand{\hbm}[1][]{\textsc{hbm#1}\xspace} %----------------------------- high bandwidth memory
 \providecommand{\ap}{\ensuremath{\alpha'}\xspace} %----------------------------- string constant
 \providecommand{\sgn}{\ensuremath{\mathrm{sign}}\xspace} %---------------------- sign function
 \providecommand{\rs}{\ensuremath{\mathrm{R}^2}\xspace} %------------------------ r-squared
@@ -108,6 +122,10 @@
 \providecommand{\fcnns}{\textsc{fcnn}s\xspace} %--------------------- fully connected neural networks
 \providecommand{\adam}{\textsc{Adam}\xspace} %----------------------- adam
 \providecommand{\adamw}{\textsc{AdamW}\xspace} %--------------------- adamw
+\providecommand{\dwt}{\textsc{dwt}\xspace} %------------------------- discrete wavelet transform
+\providecommand{\dwts}{\textsc{dwt}s\xspace} %------------------------ discrete wavelet transforms
+\providecommand{\cwt}{\textsc{cwt}\xspace} %------------------------- continuous wavelet transform
+\providecommand{\cwts}{\textsc{cwt}s\xspace} %----------------------- continuous wavelet transforms
 
 %---- remap greek letters
 
@@ -1675,10 +1693,10 @@
 
 %---- metric (use $\dss[n]{s}$ for $\mathrm{d}s^n$, [n] is optional)
 
-\providecommand{\dss}[2][1]{\ifthenelse{\equal{#1}{1}}
-                                       {\dd{#2}}
-                                       {\dd{#2^{#1}}}
-                           }
+%\providecommand{\dss}[2][1]{\ifthenelse{\equal{#1}{1}}
+%                                       {\dd{#2}}
+%                                       {\dd{#2^{#1}}}
+%                           }
 
 %---- integrals, sums and products
 
